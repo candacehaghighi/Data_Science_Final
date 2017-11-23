@@ -6,7 +6,7 @@ navbar:
     - text: "Shiny Dashboard"
       href: https://github.com
     - text: "Final repository"
-      href: https://github.com/candacehaghighi/Data_Science_Final
+      href: https://github.com/candacehaghighi/Data_Science_Final/
     - icon: fa-github fa-lg
       href: https://github.com/
 output:
