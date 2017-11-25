@@ -9,6 +9,65 @@ output: html_document
 
 ```{r, Claire's section (line 10-110; used for bringing in, cleaning, merging, etc. data)}
 
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+library(janitor)
+library(stringr)
+library(ggridges)
+library(ggthemes)
+library(forcats)
+library(viridis)
+library(plotly)
+
+# cleaning the data
+hospital_data = read_csv(file = "./data/Hospital_General_Information.csv", col_names = TRUE) %>% 
+  clean_names() %>%
+  select(provider_id,hospital_name,city,state,zip_code,hospital_type,hospital_ownership,hospital_overall_rating,patient_experience_national_comparison,location) %>%
+  mutate(hospital_overall_rating = as.numeric(hospital_overall_rating)) %>%
+  filter(!is.na(hospital_overall_rating)) %>%
+  separate(location, into = c("address", "coordinates"), sep = "\\(") %>% 
+  mutate(coordinates = str_sub(coordinates, 1, -2)) %>%
+  filter(!is.na(coordinates)) %>%
+separate(coordinates, into = c("Latitudes", "Longitudes"), sep = ",") 
+
+# hospital rating based on hospital type (boxplot)
+box_ggplot_type =
+hospital_data %>% 
+   mutate(hospital_type = fct_reorder(hospital_type, hospital_overall_rating)) %>%
+ggplot(aes(x = hospital_type, y = hospital_overall_rating, group = hospital_type)) + geom_boxplot(aes(color = hospital_type)) + labs(title = "Distribution of Hospital Rating Based on Hospital Type", x = "Hospital Type", y = "Hospital Rating") + theme_classic() + theme(axis.text.x = element_text(hjust = 1), plot.title = element_text(hjust = 0.5))
+box_ggplot_type
+
+# hospital rating based on ownership (boxplot)
+box_ggplot_owner =
+hospital_data %>% 
+   mutate(hospital_ownership = fct_reorder(hospital_ownership, hospital_overall_rating)) %>%
+ggplot(aes(x = hospital_ownership, y = hospital_overall_rating, group = hospital_ownership)) + geom_boxplot(aes(color = hospital_ownership)) + labs(title = "Distribution of Hospital Rating Based on Hospital Ownership", x = "Hospital Ownership", y = "Hospital Rating") + theme_classic() + theme(axis.text.x = element_text(angle = 120, hjust = 1)) + theme(axis.text.x = element_text(hjust = 1), plot.title = element_text(hjust = 0.5))
+ggplotly(box_ggplot_owner)
+
+
+# hospital rating distribution (barplot)
+hospital_data %>% 
+  mutate(hospital_overall_rating = as.character(hospital_overall_rating)) %>%
+  count(hospital_overall_rating) %>% 
+  mutate(hospital_overall_rating = fct_reorder(hospital_overall_rating, n)) %>% 
+  plot_ly(x = ~hospital_overall_rating, y = ~n, color = ~hospital_overall_rating, type = "bar", colors = "Set2") %>%
+   layout(legend = list(x = 100, y = 0.5)) %>%
+    layout(
+    title = "Distribution of Hospital Rating") %>%
+    layout(yaxis = list(title = 'Total number of Hospitals')) %>%
+    layout(xaxis = list(title = 'Hospital Rating'))
+
+# hospital rating and Patient Experience Level (Scatter plot)
+scatter_patient = hospital_data %>%
+  filter(!(patient_experience_national_comparison == "Not Available")) %>%
+  ggplot(aes(x = patient_experience_national_comparison, y = hospital_overall_rating, color = hospital_overall_rating)) +
+  geom_point(alpha = 0.25) +
+  scale_color_viridis() +
+  coord_cartesian() + labs(title = "Hospital Rating and Patient Experience level", x = "Patient Experience Level", y = "Hospital Rating") +
+  theme_classic()
+ggplotly(scatter_patient)
+
 
 
 
