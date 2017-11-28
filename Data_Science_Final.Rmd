@@ -292,17 +292,7 @@ ggplotly(scatter_patient)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+```
 
 
 
