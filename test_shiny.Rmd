@@ -2,10 +2,12 @@
 title: "test_shiny"
 author: "Carolina Downie"
 date: "11/27/2017"
-output: html_document
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 runtime: shiny
 ---
-
 ```{r, Carolina section 230 - 330 }
 library(tidyverse)
 library(readxl)
@@ -26,6 +28,8 @@ hospital_data_regions <- read_csv(file = "./data/Hospital_General_Information.cs
 
 ```
 
+Column {.sidebar}
+-----------------------------------------------------------------------
 ```{r}
 regions <- hospital_data_regions %>% 
   distinct(region) %>% pull()
@@ -34,6 +38,10 @@ shiny::selectInput("region_choice", label = h3("Select Region"),
             choices = regions, selected = "New England")
 ```
 
+Row
+-----------------------------------------------------------------------
+
+### Chart A
 ```{r}
 renderPlotly({ 
   hospital_data_regions %>%
@@ -47,9 +55,9 @@ renderPlotly({
 })
 
 
-
-
-
-
-
 ```
+
+Row {.tabset .tabset-fade}
+-----------------------------------------------------------------------
+
+
