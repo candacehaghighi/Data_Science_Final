@@ -295,11 +295,9 @@ hospitalranks_html <- read_html("https://www.usnews.com/info/blogs/press-room/ar
 hospitals <- hospitalranks_html %>% html_nodes(".ad-in-text-target+ .ad-in-text-target h2 , .ad-in-text-target:nth-child(5) li") %>% html_text() %>% data.frame() %>% rename(hospitals = ".") %>% filter(hospitals != "2016–17 Best Hospitals Honor Roll")
 
 
-
-
-
-
 ```
+
+
 
 
 
