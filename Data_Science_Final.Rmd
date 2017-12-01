@@ -298,20 +298,37 @@ hospitals <- hospitalranks_html %>% html_nodes(".ad-in-text-target+ .ad-in-text-
 
 ```
 
+```{r function for scraping hospital rankings from Honor Roll list (can select for different years) when it is arranged in a table with rank, hospital name, and number of points}
+
+honor_roll_scrape <- function(url) {
+
+honor_roll_html <- read_html(url)
+
+rank<- honor_roll_html %>% html_nodes("td:nth-child(1)") %>% html_text() %>% data.frame() %>% rename(rank = ".")
+
+hospital_name <-honor_roll_html %>% html_nodes("td:nth-child(2)") %>% html_text() %>% data.frame() %>% rename(hospital = ".")
+
+points <-honor_roll_html %>% html_nodes("td:nth-child(3)") %>% html_text() %>% data.frame() %>% rename(points = ".")
+
+hospitals_honor_roll <-cbind(rank, hospital_name, points)
+
+hospitals_honor_roll <-hospitals_honor_roll[2:21,]
+}
+
+
+```
+
+```{r 2016-2017 Honor Roll hospitals with points}
+hospital_honor_roll_2016 <- honor_roll_scrape("https://web.archive.org/web/20160816171510/http://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview")
+
+#web.archive.org August 16, 2016 
+```
+
+
 ```{r}
-#2017-2018 rankings, with points (maximum 480)
-hospitalranks_2017_html <- read_html("https://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview")
+#2017-2018 Honor Roll rankings, with points (maximum 480)
 
-rank_2017<- hospitalranks_2017_html %>% html_nodes("td:nth-child(1)") %>% html_text() %>% data.frame() %>% rename(rank = ".")
-
-hospital_2017<-hospitalranks_2017_html %>% html_nodes("td:nth-child(2)") %>% html_text() %>% data.frame() %>% rename(hospital = ".")
-
-points_2017<-hospitalranks_2017_html %>% html_nodes("td:nth-child(3)") %>% html_text() %>% data.frame() %>% rename(points = ".")
-
-hospitals_2017<-cbind(rank_2017, hospital_2017, points_2017)
-
-hospitals_2017<-hospitals_2017[2:21,]
-
+hospital_honor_roll_2017 <- honor_roll_scrape("https://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview")
 
 ```
 
