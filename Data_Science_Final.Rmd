@@ -23,13 +23,30 @@ library(plotly)
 # cleaning the data
 hospital_data = read_csv(file = "./data/Hospital_General_Information.csv", col_names = TRUE) %>% 
   clean_names() %>%
-  select(provider_id,hospital_name,city,state,zip_code,hospital_type,hospital_ownership,hospital_overall_rating,patient_experience_national_comparison,location) %>%
+  select(provider_id, hospital_name, city, state, zip_code, hospital_type, hospital_ownership, hospital_overall_rating, patient_experience_national_comparison, location) %>% 
   mutate(hospital_overall_rating = as.numeric(hospital_overall_rating)) %>%
   filter(!is.na(hospital_overall_rating)) %>%
   separate(location, into = c("address", "coordinates"), sep = "\\(") %>% 
-  mutate(coordinates = str_sub(coordinates, 1, -2)) %>%
+  mutate(coordinates = str_sub(coordinates, 1, -2)) %>% 
   filter(!is.na(coordinates)) %>%
-separate(coordinates, into = c("Latitudes", "Longitudes"), sep = ",") 
+separate(coordinates, into = c("Latitudes", "Longitudes"), sep = ",")
+
+hospital_data_missing = read_csv(file = "./data/Hospital_General_Information.csv", col_names = TRUE) %>% 
+  clean_names() %>%
+  select(provider_id, hospital_name, city, state, zip_code, hospital_type, hospital_ownership, hospital_overall_rating, patient_experience_national_comparison, location) %>% 
+  mutate(hospital_overall_rating = as.numeric(hospital_overall_rating)) %>%
+  filter(!is.na(hospital_overall_rating)) %>%
+  separate(location, into = c("address", "coordinates"), sep = "\\(") %>% 
+  mutate(coordinates = str_sub(coordinates, 1, -2)) %>% 
+  filter(is.na(coordinates)) %>% 
+  mutate(coordinates = map(address, ggmap::geocode)) %>% View()
+
+hospital_data_missing <- hospital_data %>% 
+  mutate(coordinates = str_sub(coordinates, 1, -2)) %>% 
+  filter(is.na(coordinates))
+
+chrystie_address <- chrystie_address %>% 
+  mutate(address = mapply(FUN = function(longitude_avg, latitude_avg) revgeocode(c(longitude_avg, latitude_avg)), chrystie_address$longitude_avg, chrystie_address$latitude_avg))
 
 # hospital rating based on hospital type (boxplot)
 box_ggplot_type =
@@ -400,7 +417,7 @@ hospital_honor_roll_2016_newc = hospital_honor_roll_2016 %>%
 mutate(new_score = (4*points/480+1)) 
 
 ##Create vector
-provider_id = c("240010", "360180", "220071", "210009", "050376", "330101", "050454", "140281", "390223", "330214", "260032", "390164", "220110", "050141", "330024", "340030", "050625", "230046", "450358", "060024")
+provider_id = c("240010", "360180", "220071", "210009", "050376", "330101", "050454", "140281", "390223", "330214", "260032", "390164", "220110", "050441", "330024", "340030", "050625", "230046", "450358", "060024")
 
 ##Add column to hospital_honor_roll_2016
 hospital_honor_roll_2016_new <- cbind(hospital_honor_roll_2016_newc, provider_id)
@@ -422,7 +439,12 @@ medicare_usnews %>%
   geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
 
 
-
+medicare_usnews %>%
+  arrange(desc(score)) %>% 
+  mutate(hospital = as.factor(hospital)) %>% 
+  ggplot(aes(x = hospital, y = score, fill = ranking_type)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme(axis.text.x = element_text(angle = 70, hjust = 1))
 
 
 
