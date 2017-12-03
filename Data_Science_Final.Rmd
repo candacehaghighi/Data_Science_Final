@@ -42,6 +42,12 @@ hospital_data_missing = read_csv(file = "./data/Hospital_General_Information.csv
   filter(is.na(coordinates)) %>% 
   mutate(coordinates = map(address, ggmap::geocode))
 
+hospital_data_missing_2 <- hospital_data_missing %>% 
+  select(provider_id, hospital_name, coordinates) %>% 
+  unnest() %>% 
+  filter(is.na(lon)) %>% 
+  mutate(coordinates_2 = map(hospital_name, ggmap::geocode))
+
 # hospital rating based on hospital type (boxplot)
 box_ggplot_type =
 hospital_data %>% 
