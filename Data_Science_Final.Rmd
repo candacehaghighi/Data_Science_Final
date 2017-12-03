@@ -392,7 +392,7 @@ hospital_function(urls)
 
 ```{r, Candace's section 340 - 440}
 library(tidyverse)
-hospital_honor_roll_2016[,3] <- as.numeric(as.character(hospital_honor_roll_2016[,3]))
+
 
 ##Creating new data set w/ normalized column values for points
 hospital_honor_roll_2016_newc = hospital_honor_roll_2016 %>%
@@ -406,10 +406,29 @@ provider_id = c("240010", "360180", "220071", "210009", "050376", "330101", "050
 hospital_honor_roll_2016_new <- cbind(hospital_honor_roll_2016_newc, provider_id)
 
 ##Merging w/ new column
-Merged_dataset = left_join(hospital_honor_roll_2016_new, hospital_data, by = "provider_id")
+Merged_dataset <- left_join(hospital_honor_roll_2016_new, hospital_data, by = "provider_id")
 
 
+m
 
+beta2_hat <- beta2_estimates %>% group_by(beta2_real) %>%
+  mutate(mean_beta2 = mean(beta2_hat), variable = "mean_beta2_hat") %>%
+  select(beta2_real, mean_beta2, variable) %>%
+  unique() 
+  
+beta2_reject <- beta2_estimates %>% filter(pvalue < 0.05) %>% 
+  group_by(beta2_real) %>%
+  mutate(mean_beta2 = mean(beta2_hat), variable = "mean_beta2_reject") %>%
+  select(beta2_real, mean_beta2, variable) %>%
+  unique() 
+ 
+beta2_summary <- rbind(beta2_hat, beta2_reject) 
+
+beta2_summary %>% 
+  ggplot(aes(x = beta2_real, y = mean_beta2, col = variable)) + 
+  geom_point() + labs(
+    title = "Plot of the true value of beta2 versus the mean estimated beta2 value"
+  )
 
 
 
