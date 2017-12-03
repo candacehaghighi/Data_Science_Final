@@ -444,12 +444,22 @@ hospital_function(urls)
 
 
 ```{r, Candace's section 340 - 440}
+library(tidyverse)
+hospital_honor_roll_2016[,3] <- as.numeric(as.character(hospital_honor_roll_2016[,3]))
 
+##Creating new data set w/ normalized column values for points
+hospital_honor_roll_2016_newc = hospital_honor_roll_2016 %>%
+##used normalized value (b-a)*(W-c)/(d+c)+a
+mutate(new_score = (4*points/480+1)) 
 
+##Create vector
+provider_id = c("240010", "360180", "220071", "210009", "050376", "330101", "050454", "140281", "390223", "330214", "260032", "390164", "220110", "050141", "330024", "340030", "050625", "230046", "450358", "060024")
 
+##Add column to hospital_honor_roll_2016
+hospital_honor_roll_2016_new <- cbind(hospital_honor_roll_2016_newc, provider_id)
 
-
-
+##Merging w/ new column
+Merged_dataset = left_join(hospital_honor_roll_2016_new, hospital_data, by = "provider_id")
 
 
 
