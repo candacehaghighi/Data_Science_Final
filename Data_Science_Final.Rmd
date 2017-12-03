@@ -31,6 +31,7 @@ hospital_data = read_csv(file = "./data/Hospital_General_Information.csv", col_n
   filter(!is.na(coordinates)) %>%
 separate(coordinates, into = c("Latitudes", "Longitudes"), sep = ",")
 
+# Do not run this code - the `geocode` function takes a long time
 hospital_data_missing = read_csv(file = "./data/Hospital_General_Information.csv", col_names = TRUE) %>% 
   clean_names() %>%
   select(provider_id, hospital_name, city, state, zip_code, hospital_type, hospital_ownership, hospital_overall_rating, patient_experience_national_comparison, location) %>% 
@@ -39,14 +40,7 @@ hospital_data_missing = read_csv(file = "./data/Hospital_General_Information.csv
   separate(location, into = c("address", "coordinates"), sep = "\\(") %>% 
   mutate(coordinates = str_sub(coordinates, 1, -2)) %>% 
   filter(is.na(coordinates)) %>% 
-  mutate(coordinates = map(address, ggmap::geocode)) %>% View()
-
-hospital_data_missing <- hospital_data %>% 
-  mutate(coordinates = str_sub(coordinates, 1, -2)) %>% 
-  filter(is.na(coordinates))
-
-chrystie_address <- chrystie_address %>% 
-  mutate(address = mapply(FUN = function(longitude_avg, latitude_avg) revgeocode(c(longitude_avg, latitude_avg)), chrystie_address$longitude_avg, chrystie_address$latitude_avg))
+  mutate(coordinates = map(address, ggmap::geocode))
 
 # hospital rating based on hospital type (boxplot)
 box_ggplot_type =
