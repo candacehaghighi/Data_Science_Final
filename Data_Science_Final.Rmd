@@ -308,7 +308,7 @@ rank<- honor_roll_html %>% html_nodes("td:nth-child(1)") %>% html_text() %>% dat
 
 hospital_name <-honor_roll_html %>% html_nodes("td:nth-child(2)") %>% html_text() %>% data.frame() %>% rename(hospital = ".")
 
-points <-honor_roll_html %>% html_nodes("td:nth-child(3)") %>% html_text() %>% data.frame() %>% rename(points = ".")
+points <-honor_roll_html %>% html_nodes("td:nth-child(3)") %>% html_text() %>% data.frame() %>% rename(points = ".") %>% mutate(points = as.numeric(as.character(points))) 
 
 hospitals_honor_roll <-cbind(rank, hospital_name, points)
 
@@ -382,59 +382,6 @@ hospital_function(urls)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
 
 
 
