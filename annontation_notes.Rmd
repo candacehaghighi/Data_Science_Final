@@ -1,0 +1,48 @@
+---
+title: "annotations_final_project"
+author: "Carolina Downie"
+date: "12/4/2017"
+output: html_document
+---
+
+*Motivation and Questions:* 
+
+When our group was brainstorming what our final Data Science project would be, we started by looking for large public health-related datasets that were available on the web. We quickly found data about hospital rankings and comparisons from [Medicare](https://data.medicare.gov/data/hospital-compare), and decided it would be interesting to analyze the hospital rankings based on factors like geography, type of hospital ownership, and some of the criteria used to create the rankings. 
+Upon doing some further reading, we learned that the roll-out of these Medicare Hospital Compare rankings in June 2016 was [controversial](https://www.usnews.com/news/articles/2016-07-27/medicare-releases-controversial-hospital-star-ratings). Many hospitals criticized the rankings, claiming that these scores were not accurate. Furthermore, there were complaints that major hospitals that consistently score highly in US News and World Reports rankings and other commercial rankings did not score highly on the [Medicare rankings](https://www.npr.org/sections/health-shots/2016/07/27/487633215/many-well-known-hospitals-fail-to-score-high-in-medicare-rankings), and instead relatively obscure hospitals received the highest rating (a rating of 5 stars). 
+Given this information, we decided to analyze the Medicare data assess these claims. 
+Questions that drove our analysis were:
+
+* What was the geographic distribution of ratings? Did areas of the country that are known for having well-known hospital systems (eg NYC, Boston) have high Medicare scores? In what areas of the country were there hospitals with the lowest scores? 
+
+* How did the distribution of ratings vary by hospital ownership type? 
+
+* Were there important differences in the Top 20 Hospitals in 2016-2017 as ranked by [US News and World Reports](https://web.archive.org/web/20160816171510/http://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview) and the corresponding 2016 Medicare scores for these hospitals (i.e. were the complaints of these hospitals justified)? 
+
+* Can we make a logistic model for patient satisfaction score based on other known hospital ranking criteria? 
+
+*Data: Source, scraping method, cleaning, etc*
+
+The initial dataset that we used was downloaded as a csv file from [Data.Medicare.gov](https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/data) by clicking on the "Export" tab and selecting the csv option. 
+In order to make a plot of the geographic distribution of hospital rankings, we needed to have the latitude and longitude of the hospitals; this information was provided in the "Location" variable, but as a coordinate pair, so we initially used the `separate` function to separate the coordinates into two separate variables. 
+
+
+
+Used the address to look up the coordinates using ggmap::geocode
+
+Then did the same thing again using hospital_name to catch the datasets that we missed using address. 
+
+5 or 4 hospitals were missing even after than 
+
+
+need to have an explanation of score normalization
+
+
+
+
+
+
+
+
+Exploratory analysis: Visualizations, summaries, and exploratory statistical analyses. Justify the steps you took, and show any major changes to your ideas.
+Additional analysis: If you undertake formal statistical analyses, describe these in detail
+Discussion: What were your findings? Are they what you expect? What insights into the data can you make?
