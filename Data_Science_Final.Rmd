@@ -98,6 +98,8 @@ scatter_patient = hospital_data %>%
   theme_classic()
 ggplotly(scatter_patient)
 
+```
+
 
 
 
@@ -336,7 +338,7 @@ honor_roll_html <- read_html(url)
 
 rank <- honor_roll_html %>% html_nodes("td:nth-child(1)") %>% html_text() %>% data.frame() %>% rename(rank = ".")
 
-hospital_name < -honor_roll_html %>% html_nodes("td:nth-child(2)") %>% html_text() %>% data.frame() %>% rename(hospital = ".")
+hospital_name <- vhonor_roll_html %>% html_nodes("td:nth-child(2)") %>% html_text() %>% data.frame() %>% rename(hospital = ".")
 
 points <- honor_roll_html %>% html_nodes("td:nth-child(3)") %>% html_text() %>% data.frame() %>% rename(points = ".") %>% mutate(points = as.numeric(as.character(points))) 
 
@@ -423,18 +425,19 @@ hospital_function(urls)
 ```{r, Candace section 340 - 440}
 library(tidyverse)
 
-##Creating new data set w/ normalized column values for points
+#Creating new data set w/ normalized column values for points
 hospital_honor_roll_2016_newc = hospital_honor_roll_2016 %>%
-##used normalized value (b-a)*(W-c)/(d+c)+a
+
+#used normalized value (b-a)*(W-c)/(d+c)+a
 mutate(new_score = (4 * points/480 + 1)) 
 
-##Create vector
+#Create vector
 provider_id = c("240010", "360180", "220071", "210009", "050376", "330101", "050454", "140281", "390223", "330214", "260032", "390164", "220110", "050441", "330024", "340030", "050625", "230046", "450358", "060024")
 
-##Add column to hospital_honor_roll_2016
+#Add column to hospital_honor_roll_2016
 hospital_honor_roll_2016_new <- cbind(hospital_honor_roll_2016_newc, provider_id)
 
-##Merging w/ new column
+#Merging w/ new column
 Merged_dataset <- full_join(hospital_honor_roll_2016_new, hospital_data_2, by = "provider_id")
 
 medicare_hospitals <- Merged_dataset %>% select(hospital, hospital_name, provider_id, hospital_overall_rating) %>% mutate(score = hospital_overall_rating, ranking_type = "medicare") %>% select(hospital, hospital_name, provider_id, score, ranking_type)
