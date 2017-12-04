@@ -31,7 +31,9 @@ Used the address to look up the coordinates using ggmap::geocode
 
 Then did the same thing again using hospital_name to catch the datasets that we missed using address. 
 
-5 or 4 hospitals were missing even after than 
+5 or 4 hospitals were missing even after that 
+
+
 
 
 need to have an explanation of score normalization
