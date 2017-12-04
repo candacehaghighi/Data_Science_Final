@@ -8,7 +8,6 @@ output: html_document
 
 
 ```{r, Claire section (line 10-110; used for bringing in, cleaning, merging, etc. data)}
-
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readxl)
@@ -19,7 +18,9 @@ library(ggthemes)
 library(forcats)
 library(viridis)
 library(plotly)
+```
 
+```{r}
 # cleaning the data
 hospital_data = read_csv(file = "./data/Hospital_General_Information.csv", col_names = TRUE) %>% 
   clean_names() %>%
@@ -29,8 +30,10 @@ hospital_data = read_csv(file = "./data/Hospital_General_Information.csv", col_n
   separate(location, into = c("address", "coordinates"), sep = "\\(") %>% 
   mutate(coordinates = str_sub(coordinates, 1, -2)) %>% 
   separate(coordinates, into = c("Latitudes", "Longitudes"), sep = ",")
+```
 
-# Do not run this code - the `geocode` function takes a long time
+```{r, eval = FALSE}
+# Do not run code between this and the next comment - the `geocode` function takes a long time
 hospital_data_missing = read_csv(file = "./data/Hospital_General_Information.csv", col_names = TRUE) %>% 
   clean_names() %>%
   select(provider_id, hospital_name, city, state, zip_code, hospital_type, hospital_ownership, hospital_overall_rating, patient_experience_national_comparison, location) %>% 
@@ -64,6 +67,10 @@ hospital_data_2 <-
   drop_na()
 
 write_csv(hospital_data_2, "./data/hospital_data_2.csv")
+```
+
+```{r}
+# Load hospital_data_2.csv below for results of above code chunk
 hospital_data_2 <- read_csv("./data/hospital_data_2.csv")
 ```
 
@@ -81,7 +88,6 @@ hospital_data_2 %>%
    mutate(hospital_ownership = fct_reorder(hospital_ownership, hospital_overall_rating)) %>%
 ggplot(aes(x = hospital_ownership, y = hospital_overall_rating, group = hospital_ownership)) + geom_boxplot(aes(color = hospital_ownership)) + labs(title = "Distribution of Hospital Rating Based on Hospital Ownership", x = "Hospital Ownership", y = "Hospital Rating") + theme_classic() + theme(axis.text.x = element_text(angle = 120, hjust = 1)) + theme(axis.text.x = element_text(hjust = 1), plot.title = element_text(hjust = 0.5))
 ggplotly(box_ggplot_owner)
-
 
 # hospital rating distribution (barplot)
 hospital_data_2 %>% 
