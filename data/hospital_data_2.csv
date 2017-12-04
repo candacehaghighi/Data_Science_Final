@@ -1,685 +1,673 @@
 provider_id,hospital_name,city,state,zip_code,hospital_type,hospital_ownership,hospital_overall_rating,patient_experience_national_comparison,address,Latitudes,Longitudes
 010005,MARSHALL MEDICAL CENTER SOUTH,BOAZ,AL,35957,Acute Care Hospitals,Government - Hospital District or Authority,3,Same as the national average,"2505 U S HIGHWAY 431 NORTH
 BOAZ, AL
-",NA,NA
+",34.22159,-86.160495
 010012,DEKALB REGIONAL MEDICAL CENTER,FORT PAYNE,AL,35968,Acute Care Hospitals,Proprietary,3,Same as the national average,"200 MED CENTER DRIVE
 FORT PAYNE, AL
-",NA,NA
+",34.4419753,-85.7550138
 010032,WEDOWEE HOSPITAL,WEDOWEE,AL,36278,Acute Care Hospitals,Government - Hospital District or Authority,4,Not Available,"209 NORTH MAIN STREET
 WEDOWEE, AL
-",NA,NA
+",33.3166476,-85.487436
 010131,CRESTWOOD MEDICAL CENTER,HUNTSVILLE,AL,35801,Acute Care Hospitals,Proprietary,3,Same as the national average,"ONE HOSPITAL DR SE
 HUNTSVILLE, AL
-",NA,NA
-020018,YUKON KUSKOKWIM DELTA REG HOSPITAL,BETHEL,AK,99559,Acute Care Hospitals,Tribal,3,Below the national average,"PO BOX 287
-BETHEL, AK
-",NA,NA
+",34.6935825,-86.572207
 030073,TUBA CITY REGIONAL HEALTH CARE CORPORATION,TUBA CITY,AZ,86045,Acute Care Hospitals,Voluntary non-profit - Other,3,Below the national average,"PO BOX 600
 TUBA CITY, AZ
-",NA,NA
-030084,CHINLE COMPREHENSIVE HEALTH CARE FACILITY,CHINLE,AZ,86503,Acute Care Hospitals,Government - Federal,3,Same as the national average,"US HWY 191, HOSPITAL ROAD
-CHINLE, AZ
-",NA,NA
+",36.1349928,-111.2398625
 040007,CHI-ST VINCENT INFIRMARY,LITTLE ROCK,AR,72205,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"TWO ST VINCENT CIRCLE
 LITTLE ROCK, AR
-",NA,NA
+",34.7504671,-92.3393722
 040018,SPARKS MEDICAL CENTER - VAN BUREN,VAN BUREN,AR,72956,Acute Care Hospitals,Proprietary,3,Same as the national average,"EAST MAIN AND SOUTH 20TH STREET
 VAN BUREN, AR
-",NA,NA
+",35.4365325,-94.3381171
 040050,OUACHITA COUNTY MEDICAL CENTER,CAMDEN,AR,71701,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"638 CALIFORNIA AVENUE
 CAMDEN, AR
-",NA,NA
+",33.5758644,-92.8362602
 041328,CHICOT MEMORIAL MEDICAL CENTER,LAKE VILLAGE,AR,71653,Critical Access Hospitals,Voluntary non-profit - Private,3,Above the national average,"2729 SOUTH HIGHWAY 65 &amp; 82
 LAKE VILLAGE, AR
-",NA,NA
+",35.5563801,-92.4494416
 050054,SAN GORGONIO MEMORIAL HOSPITAL,BANNING,CA,92220,Acute Care Hospitals,Government - Hospital District or Authority,2,Below the national average,"600 NORTH HIGHLAND SPRINGS AVENUE
 BANNING, CA
-",NA,NA
+",33.9317494,-116.9459031
 050103,WHITE MEMORIAL MEDICAL CENTER,LOS ANGELES,CA,90033,Acute Care Hospitals,Voluntary non-profit - Church,3,Below the national average,"1720 E CESAR AVENUE
 LOS ANGELES, CA
-",NA,NA
+",34.0492579,-118.2172453
 050138,KAISER FOUNDATION HOSPITAL - LOS ANGELES,LOS ANGELES,CA,90027,Acute Care Hospitals,Voluntary non-profit - Other,3,Below the national average,"4867 SUNSET BLVD
 LOS ANGELES, CA
-",NA,NA
+",34.0983411,-118.2945908
 050145,COMMUNITY HOSPITAL OF THE MONTEREY PENINSULA,MONTEREY,CA,93940,Acute Care Hospitals,Voluntary non-profit - Private,5,Above the national average,"23625 W R HOLMAN HIGHWAY
 MONTEREY, CA
-",NA,NA
-050224,HOAG MEMORIAL HOSPITAL PRESBYTERIAN,NEWPORT BEACH,CA,92663,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"ONE HOAG DRIVE
-NEWPORT BEACH, CA
-",NA,NA
-050280,MERCY MEDICAL CENTER REDDING,REDDING,CA,96001,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"2175 ROSALINE AVE, CLAIRMONT HGTS
-REDDING, CA
-",NA,NA
-050309,SUTTER ROSEVILLE MEDICAL CENTER,ROSEVILLE,CA,95661,Acute Care Hospitals,Voluntary non-profit - Other,4,Same as the national average,"ONE MEDICAL PLAZA
-ROSEVILLE, CA
-",NA,NA
+",36.5790057,-121.9132381
 050393,PIH HOSPITAL - DOWNEY,DOWNEY,CA,90241,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"11500 BROOKSHIRE AVENUE
 DOWNEY, CA
-",NA,NA
+",33.9343061,-118.1309877
 050488,EDEN MEDICAL CENTER,CASTRO VALLEY,CA,94546,Acute Care Hospitals,Voluntary non-profit - Other,3,Same as the national average,"20103 LAKE CHABOT ROAD
 CASTRO VALLEY, CA
-",NA,NA
+",37.6983405,-122.0896915
 050567,MISSION HOSPITAL REGIONAL MED CENTER,MISSION VIEJO,CA,92691,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"27700 MEDICAL CENTER RD
 MISSION VIEJO, CA
-",NA,NA
+",33.5610516,-117.6654655
 050684,MENIFEE VALLEY MEDICAL CENTER,SUN CITY,CA,92585,Acute Care Hospitals,Physician,2,Below the national average,"28400 MCCALL B0ULEVARD
 SUN CITY, CA
-",NA,NA
+",33.7189772,-117.1681518
 051317,ST HELENA HOSPITAL-CLEARLAKE,CLEARLAKE,CA,95422,Critical Access Hospitals,Voluntary non-profit - Church,2,Below the national average,"15630 18TH AVE - HWY 53
 CLEARLAKE, CA
-",NA,NA
-070006,STAMFORD HOSPITAL,STAMFORD,CT,06904,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"ONE HOSPITAL PLAZA
-STAMFORD, CT
-",NA,NA
-070016,SAINT MARY'S HOSPITAL,WATERBURY,CT,06706,Acute Care Hospitals,Voluntary non-profit - Other,3,Below the national average,"56 FRANKLIN STEET
-WATERBURY, CT
-",NA,NA
-070029,BRISTOL HOSPITAL,BRISTOL,CT,06010,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"BREWSTER RD
-BRISTOL, CT
-",NA,NA
+",38.9353458,-122.6200816
 080003,ST FRANCIS HOSPITAL,WILMINGTON,DE,19805,Acute Care Hospitals,Voluntary non-profit - Private,4,Below the national average,"7TH AND CLAYTON STS
 WILMINGTON, DE
-",NA,NA
-100054,TWIN CITIES HOSPITAL,NICEVILLE,FL,32578,Acute Care Hospitals,Proprietary,4,Above the national average,"2190 HWY 85 N
-NICEVILLE, FL
-",NA,NA
+",39.7495353,-75.5666186
 100137,HEART OF FLORIDA REGIONAL MEDICAL CENTER,DAVENPORT,FL,33837,Acute Care Hospitals,Proprietary,2,Below the national average,"40100 US HWY 27 N
 DAVENPORT, FL
-",NA,NA
+",28.1814929,-81.6418777
 100183,CORAL GABLES HOSPITAL,CORAL GABLES,FL,33134,Acute Care Hospitals,Proprietary,3,Below the national average,"3100 DOUGLAS RD
 CORAL GABLES, FL
-",NA,NA
+",25.7435082,-80.2547701
 100204,NORTH FLORIDA REGIONAL MEDICAL CENTER,GAINESVILLE,FL,32605,Acute Care Hospitals,Proprietary,3,Below the national average,"6500 NEWBERRY RD
 GAINESVILLE, FL
-",NA,NA
+",29.6603042,-82.4115721
 100209,KENDALL REGIONAL MEDICAL CENTER,MIAMI,FL,33175,Acute Care Hospitals,Proprietary,3,Below the national average,"11750 BIRD RD
 MIAMI, FL
-",NA,NA
+",25.7309346,-80.3861403
 100244,CAPE CORAL HOSPITAL,CAPE CORAL,FL,33990,Acute Care Hospitals,Government - Hospital District or Authority,2,Below the national average,"636 DEL PRADO BLVD
 CAPE CORAL, FL
-",NA,NA
-110030,CARTERSVILLE MEDICAL CENTER,CARTERSVILLE,GA,30120,Acute Care Hospitals,Voluntary non-profit - Private,4,Below the national average,"960 JOE FRANK HARRIS PARKWAY
-CARTERSVILLE, GA
-",NA,NA
+",26.6394379,-81.943245
 110038,JOHN D ARCHBOLD MEMORIAL HOSPITAL,THOMASVILLE,GA,31792,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"915 GORDON AVENUE &amp; MIMOSA DRIVE
 THOMASVILLE, GA
-",NA,NA
-110041,HABERSHAM COUNTY MEDICAL CTR,DEMOREST,GA,30535,Acute Care Hospitals,Government - Hospital District or Authority,3,Same as the national average,"541 HISTORIC HIGHWAY 441-NORTH
-DEMOREST, GA
-",NA,NA
+",30.8251841,-83.9720565
 110128,MEADOWS REGIONAL MEDICAL CENTER,VIDALIA,GA,30474,Acute Care Hospitals,Proprietary,3,Above the national average,"ONE MEADOWS PARKWAY
 VIDALIA, GA
-",NA,NA
+",32.2090345,-82.3758517
 111313,PUTNAM GENERAL HOSPITAL,EATONTON,GA,31024,Critical Access Hospitals,Government - Hospital District or Authority,3,Not Available,"101 LAKE OCONEE PARKWAY
 EATONTON, GA
-",NA,NA
+",33.3358149,-83.3712396
 111335,LIBERTY REGIONAL MEDICAL CENTER,HINESVILLE,GA,31310,Critical Access Hospitals,Government - Hospital District or Authority,3,Same as the national average,"462 E G MILES PARKWAY
 HINESVILLE, GA
-",NA,NA
+",31.8394772,-81.6009755
 120028,NORTH HAWAII COMMUNITY HOSPITAL,KAMUELA,HI,96743,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"67 1125 MAMALAHOA HIGHWAY
 KAMUELA, HI
-",NA,NA
+",20.02287,-155.6650027
 140002,ALTON MEMORIAL HOSPITAL,ALTON,IL,62002,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"ONE MEMORIAL DRIVE
 ALTON, IL
-",NA,NA
+",38.8996874,-90.1591356
 130013,SAINT ALPHONSUS MEDICAL CENTER - NAMPA,NAMPA,ID,83686,Acute Care Hospitals,Voluntary non-profit - Church,4,Below the national average,"1512 TWELFTH AVENUE ROAD
 NAMPA, ID
-",NA,NA
+",43.553871,-116.5706709
 140007,PRESENCE SAINT JOSEPH MEDICAL CENTER,JOLIET,IL,60435,Acute Care Hospitals,Voluntary non-profit - Church,2,Same as the national average,"333 N MADISON
 JOLIET, IL
-",NA,NA
-140015,BLESSING HOSPITAL,QUINCY,IL,62301,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"BROADWAY AT 11TH STREET
-QUINCY, IL
-",NA,NA
+",41.5278676,-88.1358334
 140018,MT SINAI HOSPITAL MEDICAL CENTER,CHICAGO,IL,60608,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"15TH STREET AT CALIFORNIA
 CHICAGO, IL
-",NA,NA
+",41.8601109,-87.6957067
 140052,OSF SAINT ANTHONY'S HEALTH CENTER,ALTON,IL,62002,Acute Care Hospitals,Voluntary non-profit - Church,3,Above the national average,"ST ANTHONY'S WAY
 ALTON, IL
-",NA,NA
+",38.9075493,-90.1719701
 140118,METROSOUTH MEDICAL CENTER,BLUE ISLAND,IL,60406,Acute Care Hospitals,Proprietary,2,Below the national average,"12935 S GREGORY
 BLUE ISLAND, IL
-",NA,NA
+",41.6580995,-87.6782769
 140191,INGALLS MEMORIAL HOSPITAL,HARVEY,IL,60426,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"ONE INGALLS DRIVE
 HARVEY, IL
-",NA,NA
+",41.607243,-87.6595979
 140210,HARRISBURG MEDICAL CENTER,HARRISBURG,IL,62946,Acute Care Hospitals,Voluntary non-profit - Other,3,Same as the national average,"100 DOCTOR WARREN TUTTLE DR
 HARRISBURG, IL
-",NA,NA
+",37.730881,-88.5248334
 140258,ALEXIAN BROTHERS MEDICAL CENTER 1,ELK GROVE VILLAGE,IL,60007,Acute Care Hospitals,Voluntary non-profit - Church,4,Same as the national average,"800 W BIESTERFIELD RD
 ELK GROVE VILLAGE, IL
-",NA,NA
-140286,KISHWAUKEE COMMUNITY HOSPITAL,DEKALB,IL,60115,Acute Care Hospitals,Voluntary non-profit - Private,4,Same as the national average,"ONE KISH HOSPITAL DRIVE
-DEKALB, IL
-",NA,NA
+",42.0047644,-88.0164522
 150069,KING'S DAUGHTERS' HEALTH,MADISON,IN,47250,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"1373 EAST SR 62
 MADISON, IN
-",NA,NA
+",38.7925352,-85.3642044
 150089,INDIANA UNIVERSITY HEALTH BALL MEMORIAL HOSPITAL,MUNCIE,IN,47303,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"2401 UNIVERSITY AVE
 MUNCIE, IN
-",NA,NA
+",40.1968976,-85.4146284
 150128,COMMUNITY HOSPITAL SOUTH,INDIANAPOLIS,IN,46227,Acute Care Hospitals,Voluntary non-profit - Private,4,Same as the national average,"1402 E COUNTY LINE RD S
 INDIANAPOLIS, IN
-",NA,NA
-160089,OTTUMWA REGIONAL HEALTH CENTER,OTTUMWA,IA,52501,Acute Care Hospitals,Proprietary,3,Below the national average,"1001 E PENNSYLVANIA
-OTTUMWA, IA
-",NA,NA
+",39.6365539,-86.132546
 161377,MERCY MEDICAL CENTER-CENTERVILLE,CENTERVILLE,IA,52544,Critical Access Hospitals,Voluntary non-profit - Private,4,Same as the national average,"ONE ST JOSEPH'S DRIVE
 CENTERVILLE, IA
-",NA,NA
+",40.7557317,-92.8570527
 170166,MORTON COUNTY HOSPITAL,ELKHART,KS,67950,Acute Care Hospitals,Government - Local,3,Not Available,"445 N HILLTOP
 ELKHART, KS
-",NA,NA
+",37.0025552,-101.9047326
 171373,ALLEN COUNTY REGIONAL HOSPITAL,IOLA,KS,66749,Critical Access Hospitals,Government - State,2,Same as the national average,"3066 NORTH KENTUCKY STREET
 IOLA, KS
-",NA,NA
+",37.94859,-95.392147
 171382,ATCHISON HOSPITAL,ATCHISON,KS,66002,Critical Access Hospitals,Voluntary non-profit - Private,3,Above the national average,"800 RAVIN HILL DRIVE
 ATCHISON, KS
-",NA,NA
+",39.5366253,-95.1282386
 180010,SAINT JOSEPH HOSPITAL,LEXINGTON,KY,40504,Acute Care Hospitals,Voluntary non-profit - Church,2,Below the national average,"ONE SAINT JOSEPH DRIVE
 LEXINGTON, KY
-",NA,NA
+",38.0324504,-84.5236448
 180079,HARRISON MEMORIAL HOSPITAL,CYNTHIANA,KY,41031,Acute Care Hospitals,Voluntary non-profit - Other,4,Above the national average,"1210 KY HWY 36 E
 CYNTHIANA, KY
-",NA,NA
+",38.3834944,-84.2774548
 180080,BAPTIST HEALTH CORBIN,CORBIN,KY,40701,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"ONE TRILLIUM WAY
 CORBIN, KY
-",NA,NA
+",36.9228938,-84.120322
 190116,MOREHOUSE GENERAL HOSPITAL,BASTROP,LA,71220,Acute Care Hospitals,Government - Hospital District or Authority,2,Same as the national average,"323 W WALNUT
 BASTROP, LA
-",NA,NA
+",32.7748321,-91.9172474
 190144,MINDEN MEDICAL CENTER,MINDEN,LA,71055,Acute Care Hospitals,Proprietary,4,Above the national average,"NO 1 MEDICAL PLAZA
 MINDEN, LA
-",NA,NA
+",32.6177009,-93.286614
 190145,LASALLE GENERAL HOSPITAL,JENA,LA,71342,Acute Care Hospitals,Government - Hospital District or Authority,3,Not Available,"187 NINTH ST/HWY 84 WEST
 JENA, LA
-",NA,NA
+",31.6938214,-92.1575962
 200033,EASTERN MAINE MEDICAL CENTER,BANGOR,ME,04401,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"PO BOX 404
 BANGOR, ME
-",NA,NA
+",44.8011821,-68.7778138
 200018,AROOSTOOK MEDICAL CENTER,PRESQUE ISLE,ME,04769,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"PO BOX 151
 PRESQUE ISLE, ME
-",NA,NA
+",46.681153,-68.0158614
 201312,WALDO COUNTY GENERAL HOSPITAL,BELFAST,ME,04915,Critical Access Hospitals,Voluntary non-profit - Private,3,Same as the national average,"PO BOX 287
 BELFAST, ME
-",NA,NA
+",44.4122271,-68.9939022
 220010,LAWRENCE GENERAL HOSPITAL,LAWRENCE,MA,01842,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"ONE GENERAL STREET
 LAWRENCE, MA
-",NA,NA
-220086,BETH ISRAEL DEACONESS MEDICAL CENTER,BOSTON,MA,02215,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"330 BROOKLINE AVENUE
-BOSTON, MA
-",NA,NA
+",42.7098315,-71.149859
 220171,"LAHEY HOSPITAL & MEDICAL CENTER, BURLINGTON",BURLINGTON,MA,01803,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"41 &amp; 45 MALL ROAD
 BURLINGTON, MA
-",NA,NA
-221300,MARTHA'S VINEYARD HOSPITAL INC,OAK BLUFFS,MA,02557,Critical Access Hospitals,Voluntary non-profit - Private,4,Above the national average,"ONE HOSPITAL ROAD, FIRST FL, WING 5, PO BOX 1477
-OAK BLUFFS, MA
-",NA,NA
+",35.2424881,-85.6904792
 230110,SPECTRUM HEALTH LUDINGTON HOSPITAL,LUDINGTON,MI,49431,Acute Care Hospitals,Voluntary non-profit - Other,4,Same as the national average,"ONE N ATKINSON DRIVE
 LUDINGTON, MI
-",NA,NA
+",43.9593366,-86.4292255
 230132,HURLEY MEDICAL CENTER,FLINT,MI,48503,Acute Care Hospitals,Voluntary non-profit - Other,1,Below the national average,"ONE HURLEY PLAZA
 FLINT, MI
-",NA,NA
+",43.021205,-83.7047248
 230197,GENESYS REGIONAL MEDICAL CENTER - HEALTH PARK,GRAND BLANC,MI,48439,Acute Care Hospitals,Voluntary non-profit - Church,2,Below the national average,"ONE GENESYS PARKWAY
 GRAND BLANC, MI
-",NA,NA
-230269,"BEAUMONT HOSPITAL, TROY",TROY,MI,48085,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"44201 DEQUINDRE ROAD
-TROY, MI
-",NA,NA
-230273,DETROIT RECEIVING HOSPITAL & UNIV HEALTH CENTER,DETROIT,MI,48201,Acute Care Hospitals,Proprietary,1,Below the national average,"4201 ST ANTOINE ST - 3M
-DETROIT, MI
-",NA,NA
+",42.892188,-83.6423725
 230277,HURON VALLEY-SINAI HOSPITAL,COMMERCE TOWNSHIP,MI,48382,Acute Care Hospitals,Proprietary,3,Same as the national average,"ONE WILLIAM CARLS DRIVE
 COMMERCE TOWNSHIP, MI
-",NA,NA
+",42.592901,-83.499202
 231303,SCHOOLCRAFT MEMORIAL HOSPITAL,MANISTIQUE,MI,49854,Critical Access Hospitals,Government - Local,4,Above the national average,"7870W US HIGHWAY 2
 MANISTIQUE, MI
-",NA,NA
+",45.9845353,-86.1322864
 231322,MUNSON HEALTHCARE CHARLEVOIX HOSPITAL,CHARLEVOIX,MI,49720,Critical Access Hospitals,Voluntary non-profit - Other,3,Above the national average,"14700 LAKESHORE DRIVE
 CHARLEVOIX, MI
-",NA,NA
-231323,SPECTRUM HEALTH REED CITY HOSPITAL,REED CITY,MI,49677,Critical Access Hospitals,Voluntary non-profit - Private,4,Same as the national average,"300 N PATTERSON, PO BOX 75
-REED CITY, MI
-",NA,NA
+",45.314328,-85.274572
 250006,BAPTIST MEMORIAL HOSPITAL UNION COUNTY,NEW ALBANY,MS,38652,Acute Care Hospitals,Voluntary non-profit - Other,4,Above the national average,"200 HWY 30 WEST
 NEW ALBANY, MS
-",NA,NA
+",34.4975149,-89.0276986
 250027,WINSTON MEDICAL CENTER & SWINGBED,LOUISVILLE,MS,39339,Acute Care Hospitals,Voluntary non-profit - Private,3,Not Available,"17550 EAST MAIN STREET
 LOUISVILLE, MS
-",NA,NA
+",33.124245,-89.0367029
 250057,KING'S DAUGHTERS MEDICAL CENTER-BROOKHAVEN,BROOKHAVEN,MS,39601,Acute Care Hospitals,Voluntary non-profit - Other,4,Above the national average,"P O BOX 948/427 HIGHWAY 51 NORTH
 BROOKHAVEN, MS
-",NA,NA
+",31.5883282,-90.4569151
 250084,MERIT HEALTH NATCHEZ,NATCHEZ,MS,39120,Acute Care Hospitals,Proprietary,2,Below the national average,"52 SERGEANT PRENTISS DRIVE
 NATCHEZ, MS
-",NA,NA
-250097,SOUTHWEST MS REGIONAL MEDICAL CENTER,MCCOMB,MS,39649,Acute Care Hospitals,Government - Local,2,Below the national average,"215 MARION AV BOX 1307
-MCCOMB, MS
-",NA,NA
-251309,FIELD HEALTH SYSTEM,CENTREVILLE,MS,39631,Critical Access Hospitals,Government - Local,2,Not Available,"178 HIGHWAY 24
-CENTREVILLE, MS
-",NA,NA
+",31.5203145,-91.3886597
 260020,MERCY HOSPITAL ST LOUIS,SAINT LOUIS,MO,63141,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"615 NEW BALLAS ROAD
 SAINT LOUIS, MO
-",NA,NA
+",38.6455339,-90.4462228
 260032,BARNES JEWISH HOSPITAL,SAINT LOUIS,MO,63110,Acute Care Hospitals,Voluntary non-profit - Other,2,Above the national average,"ONE BARNES-JEWISH HOSPITAL PLAZA
 SAINT LOUIS, MO
-",NA,NA
+",38.6352337,-90.2648651
 260108,MISSOURI BAPTIST MEDICAL CENTER,TOWN AND COUNTRY,MO,63131,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"3015 N BALLAS RD
 TOWN AND COUNTRY, MO
-",NA,NA
+",38.6362225,-90.44652
 260141,UNIVERSITY OF MISSOURI HEALTH CARE,COLUMBIA,MO,65212,Acute Care Hospitals,Government - State,2,Same as the national average,"ONE HOSPITAL DRIVE
 COLUMBIA, MO
-",NA,NA
+",38.9387994,-92.3272353
 260142,FITZGIBBON HOSPITAL,MARSHALL,MO,65340,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"2305 S 65 HIGHWAY
 MARSHALL, MO
-",NA,NA
+",39.0918731,-93.2129173
 260183,SAINT FRANCIS MEDICAL CENTER,CAPE GIRARDEAU,MO,63703,Acute Care Hospitals,Voluntary non-profit - Church,3,Above the national average,"211 ST FRANCIS DR
 CAPE GIRARDEAU, MO
-",NA,NA
+",37.3034048,-89.5714474
 260214,BELTON REGIONAL MEDICAL CENTER,BELTON,MO,64012,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"17065 S 71 HIGHWAY
 BELTON, MO
-",NA,NA
-270003,ST PETER'S HOSPITAL,HELENA,MT,59601,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"2475 BROADWAY
-HELENA, MT
-",NA,NA
+",38.8140323,-94.5044127
 280009,CHI HEALTH GOOD SAMARITAN,KEARNEY,NE,68848,Acute Care Hospitals,Voluntary non-profit - Church,3,Same as the national average,"P O BOX 1990, 10 EAST 31ST ST
 KEARNEY, NE
-",NA,NA
+",40.7076254,-99.0818136
 280013,THE NEBRASKA MEDICAL CENTER,OMAHA,NE,68198,Acute Care Hospitals,Voluntary non-profit - Private,2,Above the national average,"987400 NEBRASKA MEDICAL CENTER
 OMAHA, NE
-",NA,NA
+",41.2564109,-95.9771025
 281319,JEFFERSON COMMUNITY HEALTH CENTER,FAIRBURY,NE,68352,Critical Access Hospitals,Voluntary non-profit - Private,3,Not Available,"P O BOX 277, 2200 H ST
 FAIRBURY, NE
-",NA,NA
-281326,ANTELOPE MEMORIAL HOSPITAL,NELIGH,NE,68756,Critical Access Hospitals,Voluntary non-profit - Private,3,Not Available,"P O BOX 229, 102 WEST 9TH ST
-NELIGH, NE
-",NA,NA
+",40.155788,-97.1749473
 281334,BOONE COUNTY HEALTH CENTER,ALBION,NE,68620,Critical Access Hospitals,Government - Local,4,Above the national average,"P O BOX 151, 723 WEST FAIRVIEW ST
 ALBION, NE
-",NA,NA
+",41.6835132,-98.0054172
 281336,YORK GENERAL HOSPITAL,YORK,NE,68467,Critical Access Hospitals,Voluntary non-profit - Private,3,Above the national average,"2222 LINCOLN AVE
 YORK, NE
-",NA,NA
+",40.882476,-97.592109
 281338,HOWARD COUNTY MEDICAL CENTER,ST PAUL,NE,68873,Critical Access Hospitals,Voluntary non-profit - Other,3,Not Available,"P O BOX 406, 1113 SHERMAN ST
 ST PAUL, NE
-",NA,NA
+",41.2171009,-98.4631365
 281344,CHERRY COUNTY HOSPITAL,VALENTINE,NE,69201,Critical Access Hospitals,Government - Local,3,Same as the national average,"P O BOX 410, 510 NORTH GREEN ST
 VALENTINE, NE
-",NA,NA
+",42.8783731,-100.5392673
 281349,PENDER COMMUNITY HOSPITAL,PENDER,NE,68047,Critical Access Hospitals,Government - Hospital District or Authority,4,Above the national average,"P O BOX 100, 100 HOSPITAL DRIVE
 PENDER, NE
-",NA,NA
+",42.1055877,-96.7110334
 281352,"COMMUNITY MEDICAL CENTER, INC",FALLS CITY,NE,68355,Critical Access Hospitals,Voluntary non-profit - Private,4,Above the national average,"P O BOX 399, 3307 BARADA ST
 FALLS CITY, NE
-",NA,NA
+",40.0777122,-95.6079865
 281360,BOX BUTTE GENERAL HOSPITAL,ALLIANCE,NE,69301,Critical Access Hospitals,Government - Local,3,Same as the national average,"P O BOX 810, 2101 BOX BUTTE AVE
 ALLIANCE, NE
-",NA,NA
+",42.1165187,-102.8697371
 281361,LEXINGTON REGIONAL HEALTH CENTER,LEXINGTON,NE,68850,Critical Access Hospitals,Government - Hospital District or Authority,3,Not Available,"P O BOX 980, 1201 NORTH ERIE ST
 LEXINGTON, NE
-",NA,NA
+",40.7854293,-99.757449
 281363,COMMUNITY HOSPITAL,MCCOOK,NE,69001,Critical Access Hospitals,Voluntary non-profit - Other,4,Above the national average,"P O BOX 1328, 1301 EAST H ST
 MCCOOK, NE
-",NA,NA
+",40.205277,-100.6080491
 281364,"BEATRICE COMMUNITY HOSPITAL & HEALTH CENTER, INC",BEATRICE,NE,68310,Critical Access Hospitals,Voluntary non-profit - Private,4,Above the national average,"P O BOX 278, 4800 HOSPITAL PARKWAY
 BEATRICE, NE
-",NA,NA
-290041,SUMMERLIN HOSPITAL MEDICAL CENTER,LAS VEGAS,NV,89144,Acute Care Hospitals,Proprietary,3,Below the national average,"657 TOWN CENTER DRIVE
-LAS VEGAS, NV
-",NA,NA
+",40.3159203,-96.7495458
 290045,ST ROSE DOMINICAN HOSPITALS - SIENA CAMPUS,HENDERSON,NV,89052,Acute Care Hospitals,Voluntary non-profit - Private,1,Below the national average,"3001 ST ROSE PARKWAY
 HENDERSON, NV
-",NA,NA
+",36.0045914,-115.1150534
 291306,CARSON VALLEY MEDICAL CENTER,GARDNERVILLE,NV,89410,Critical Access Hospitals,Voluntary non-profit - Private,3,Same as the national average,"1107 HIGHWAY 395
 GARDNERVILLE, NV
-",NA,NA
+",38.919495,-119.7190448
 310009,CLARA MAASS MEDICAL CENTER,BELLEVILLE,NJ,07109,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"ONE CLARA MAASS DRIVE
 BELLEVILLE, NJ
-",NA,NA
+",40.7857505,-74.1764017
 310010,UNIV MEDICAL CENTER OF PRINCETON AT PLAINSBORO,PLAINSBORO,NJ,08536,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"ONE PLAINSBORO ROAD
 PLAINSBORO, NJ
-",NA,NA
+",40.3398191,-74.6240079
 310011,CAPE REGIONAL MEDICAL CENTER INC,CAPE MAY COURT HOUSE,NJ,08210,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"TWO STONE HARBOR BLVD
 CAPE MAY COURT HOUSE, NJ
-",NA,NA
-310034,RIVERVIEW MEDICAL CENTER,RED BANK,NJ,07701,Acute Care Hospitals,Proprietary,3,Same as the national average,"ONE RIVERVIEW PLAZA
-RED BANK, NJ
-",NA,NA
+",39.0875376,-74.8168417
 310038,ROBERT WOOD JOHNSON UNIVERSITY HOSPITAL,NEW BRUNSWICK,NJ,08901,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"ONE ROBERT WOOD JOHNSON PLACE
 NEW BRUNSWICK, NJ
-",NA,NA
-310044,CAPITAL HEALTH MEDICAL CENTER - HOPEWELL,PENNINGTON,NJ,08534,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"ONE CAPITAL WAY
-PENNINGTON, NJ
-",NA,NA
+",40.4953282,-74.4498466
 310054,HACKENSACK-UMC MOUNTAINSIDE,MONTCLAIR,NJ,07042,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"BAY AND HIGHLAND AVE
 MONTCLAIR, NJ
-",NA,NA
-310091,MEMORIAL HOSPITAL OF SALEM COUNTY,SALEM,NJ,08079,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"310 WOODSTOWN ROAD
-SALEM, NJ
-",NA,NA
+",40.8105891,-74.2046182
 310110,ROBERT WOOD JOHNSON UNIVERSITY HOSPITAL HAMILTON,HAMILTON,NJ,08690,Acute Care Hospitals,Voluntary non-profit - Private,1,Below the national average,"ONE HAMILTON HEALTH PLACE
 HAMILTON, NJ
-",NA,NA
+",40.2161213,-74.6720664
 320059,NORTHERN NAVAJO MEDICAL CENTER,SHIPROCK,NM,87420,Acute Care Hospitals,Government - Federal,2,Below the national average,"US HWY 491 NORTH
 SHIPROCK, NM
-",NA,NA
+",36.7844548,-108.6861275
 321309,MIMBRES MEMORIAL HOSPITAL,DEMING,NM,88031,Critical Access Hospitals,Proprietary,2,Below the national average,"900 W ASH
 DEMING, NM
-",NA,NA
-330024,MOUNT SINAI HOSPITAL,NEW YORK,NY,10029,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"ONE GUSTAVE L LEVY PLACE
-NEW YORK, NY
-",NA,NA
-330049,NORTHERN DUTCHESS HOSPITAL,RHINEBECK,NY,12572,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"6511 SPRINGBROOK AVENUE
-RHINEBECK, NY
-",NA,NA
+",32.2612546,-107.7687535
 330055,NEW YORK-PRESBYTERIAN/QUEENS,FLUSHING,NY,11355,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"56-45 MAIN STREET
 FLUSHING, NY
-",NA,NA
+",40.7471206,-73.8251431
 330058,GENEVA GENERAL HOSPITAL,GENEVA,NY,14456,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"196 -198 NORTH STREET
 GENEVA, NY
-",NA,NA
+",42.876489,-76.9883041
 330085,AURELIA OSBORN FOX MEMORIAL HOSPITAL,ONEONTA,NY,13820,Acute Care Hospitals,Voluntary non-profit - Other,2,Same as the national average,"ONE NORTON AVENUE
 ONEONTA, NY
-",NA,NA
-330136,MARY IMOGENE BASSETT HOSPITAL,COOPERSTOWN,NY,13326,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"ONE ATWELL ROAD
-COOPERSTOWN, NY
-",NA,NA
+",42.4579572,-75.0523319
 330181,GLEN COVE HOSPITAL,GLEN COVE,NY,11542,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"101 ST ANDREWS LANE
 GLEN COVE, NY
-",NA,NA
-330195,LONG ISLAND JEWISH MEDICAL CENTER,NEW HYDE PARK,NY,11040,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"270 - 05 76TH AVENUE
-NEW HYDE PARK, NY
-",NA,NA
+",40.8707547,-73.6223514
 330198,SOUTH NASSAU COMMUNITIES HOSPITAL,OCEANSIDE,NY,11572,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"ONE HEALTHY WAY
 OCEANSIDE, NY
-",NA,NA
+",40.6512461,-73.6310463
 330304,WHITE PLAINS HOSPITAL CENTER,WHITE PLAINS,NY,10601,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"41 EAST POST R0AD
 WHITE PLAINS, NY
-",NA,NA
+",41.0260066,-73.769389
 330385,NORTH CENTRAL BRONX HOSPITAL,BRONX,NY,10467,Acute Care Hospitals,Government - Local,2,Below the national average,"3424 KOSSUTH AVENUE &amp; 210TH STREET
 BRONX, NY
-",NA,NA
-330386,CATSKILL REGIONAL MEDICAL CENTER,HARRIS,NY,12742,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"68 HARRIS BUSHVILLE ROAD
-HARRIS, NY
-",NA,NA
+",40.8805488,-73.8811176
 330393,UNIVERSITY HOSPITAL ( STONY BROOK ),STONY BROOK,NY,11794,Acute Care Hospitals,Government - State,2,Same as the national average,"HEALTH SCIENCES CENTER SUNY
 STONY BROOK, NY
-",NA,NA
-340030,DUKE UNIVERSITY HOSPITAL,DURHAM,NC,27710,Acute Care Hospitals,Proprietary,4,Above the national average,"PO BOX 3814 DUMC ERWIN RD
-DURHAM, NC
-",NA,NA
-340047,NORTH CAROLINA BAPTIST HOSPITAL,WINSTON-SALEM,NC,27157,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"MEDICAL CENTER BOULEVARD
-WINSTON-SALEM, NC
-",NA,NA
+",40.909791,-73.1161755
 340127,GRANVILLE HEALTH SYSTEMS,OXFORD,NC,27565,Acute Care Hospitals,Government - Local,3,Same as the national average,"COLLEGE ST BOX 947
 OXFORD, NC
-",NA,NA
+",36.3263208,-78.5932275
 340132,MARIA PARHAM MEDICAL CENTER,HENDERSON,NC,27536,Acute Care Hospitals,Proprietary,2,Below the national average,"PO BOX 59
 HENDERSON, NC
-",NA,NA
+",36.3295905,-78.3991638
 340144,DAVIS REGIONAL MEDICAL CENTER,STATESVILLE,NC,28687,Acute Care Hospitals,Proprietary,3,Below the national average,"218 OLD MOCKSBVILLE RD PO BOX 1823
 STATESVILLE, NC
-",NA,NA
-340171,NOVANT HEALTH MATTHEWS MEDICAL CENTER,MATTHEWS,NC,28106,Acute Care Hospitals,Voluntary non-profit - Other,4,Below the national average,"1500 MATTHEWS TWNSHP PRKWY BOX 3310
-MATTHEWS, NC
-",NA,NA
+",35.818754,-80.828965
 341320,ALLEGHANY COUNTY MEMORIAL HOSPITAL,SPARTA,NC,28675,Critical Access Hospitals,Voluntary non-profit - Private,3,Not Available,"617 DOCTORS STREET
 SPARTA, NC
-",NA,NA
+",36.5095115,-81.1150447
 341323,CHARLES A CANNON JR MEMORIAL HOSPITAL,LINVILLE,NC,28646,Critical Access Hospitals,Voluntary non-profit - Private,3,Same as the national average,"434 HOSPITAL DRIVE
 LINVILLE, NC
-",NA,NA
-351318,CARRINGTON HEALTH CENTER,CARRINGTON,ND,58421,Critical Access Hospitals,Voluntary non-profit - Private,4,Not Available,"PO BOX 461
-CARRINGTON, ND
-",NA,NA
+",36.0604388,-81.8892477
 351319,PEMBINA COUNTY MEMORIAL HOSPITAL,CAVALIER,ND,58220,Critical Access Hospitals,Voluntary non-profit - Private,3,Not Available,"BOX 380
 CAVALIER, ND
-",NA,NA
+",48.7925824,-97.6187762
 360051,MIAMI VALLEY HOSPITAL,DAYTON,OH,45409,Acute Care Hospitals,Voluntary non-profit - Private,4,Below the national average,"ONE WYOMING STREET
 DAYTON, OH
-",NA,NA
+",39.745569,-84.1844696
 360076,ATRIUM MEDICAL CENTER,FRANKLIN,OH,45005,Acute Care Hospitals,Voluntary non-profit - Private,4,Below the national average,"ONE MEDICAL CENTER DRIVE
 FRANKLIN, OH
-",NA,NA
+",39.4984493,-84.3138728
 360098,LAKE HEALTH,CONCORD,OH,44077,Acute Care Hospitals,Voluntary non-profit - Private,4,Same as the national average,"7590 AUBURN ROAD
 CONCORD, OH
-",NA,NA
-360133,GRANDVIEW HOSPITAL & MEDICAL CENTER,DAYTON,OH,45405,Acute Care Hospitals,Voluntary non-profit - Other,4,Above the national average,"405 GRAND AVENUE
-DAYTON, OH
-",NA,NA
+",41.6627956,-81.2465525
 360262,MERCY ST ANNE HOSPITAL,TOLEDO,OH,43623,Acute Care Hospitals,Voluntary non-profit - Church,5,Same as the national average,"3404 SYLVANIA AVENUE
 TOLEDO, OH
-",NA,NA
+",41.6935593,-83.6259731
 370034,MCALESTER REGIONAL HEALTH CENTER AUTHORITY,MCALESTER,OK,74501,Acute Care Hospitals,Voluntary non-profit - Other,2,Below the national average,"ONE CLARK BASS BOULEVARD
 MCALESTER, OK
-",NA,NA
-370048,MCCURTAIN MEMORIAL HOSPITAL,IDABEL,OK,74745,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"1301 LINCOLN ROAD
-IDABEL, OK
-",NA,NA
+",34.935835,-95.7497708
 370049,STILLWATER MEDICAL CENTER AUTHORITY,STILLWATER,OK,74076,Acute Care Hospitals,Voluntary non-profit - Other,4,Above the national average,"1323 WEST 6TH STREET
 STILLWATER, OK
-",NA,NA
+",36.1150619,-97.0748541
 370054,GRADY MEMORIAL HOSPITAL,CHICKASHA,OK,73018,Acute Care Hospitals,Government - Hospital District or Authority,3,Same as the national average,"2220 IOWA STREET
 CHICKASHA, OK
-",NA,NA
-370183,HILLCREST HOSPITAL HENRYETTA,HENRYETTA,OK,74437,Acute Care Hospitals,Proprietary,3,Not Available,"2401 W MAIN DEWEY
-HENRYETTA, OK
-",NA,NA
+",35.049241,-97.961299
 370222,MCBRIDE ORTHOPEDIC HOSPITAL,OKLAHOMA CITY,OK,73114,Acute Care Hospitals,Physician,5,Above the national average,"9600 NORTH BROADWAY EXTENSION
 OKLAHOMA CITY, OK
-",NA,NA
+",35.5682789,-97.5107863
 371313,"MERCY HOSPITAL KINGFISHER, INC",KINGFISHER,OK,73750,Critical Access Hospitals,Voluntary non-profit - Private,4,Not Available,"1000 KINGFISHER HOSPITAL DRIVE
 KINGFISHER, OK
-",NA,NA
+",35.8102465,-97.9447888
 381319,ST ANTHONY HOSPITAL,PENDLETON,OR,97801,Critical Access Hospitals,Voluntary non-profit - Church,4,Above the national average,"2801 ST ANTHONY WAY
 PENDLETON, OR
-",NA,NA
+",45.6478212,-118.8122956
 390013,EVANGELICAL COMMUNITY HOSPITAL,LEWISBURG,PA,17837,Acute Care Hospitals,Voluntary non-profit - Other,3,Above the national average,"ONE HOSPITAL DRIVE
 LEWISBURG, PA
-",NA,NA
+",40.9795926,-76.8864161
 390032,ALLEGHENY VALLEY HOSPITAL,NATRONA,PA,15065,Acute Care Hospitals,Voluntary non-profit - Other,3,Below the national average,"1301 CARLISLE ST
 NATRONA, PA
-",NA,NA
+",40.618767,-79.736921
 390066,GOOD SAMARITAN HOSPITAL,LEBANON,PA,17042,Acute Care Hospitals,Voluntary non-profit - Other,2,Above the national average,"FOURTH AND WALNUT STREETS
 LEBANON, PA
-",NA,NA
+",40.3371439,-76.4174986
 390079,ROBERT PACKER HOSPITAL,SAYRE,PA,18840,Acute Care Hospitals,Voluntary non-profit - Other,2,Same as the national average,"ONE GUTHRIE SQUARE
 SAYRE, PA
-",NA,NA
+",41.9803903,-76.5199915
 390093,CLARION HOSPITAL,CLARION,PA,16214,Acute Care Hospitals,Voluntary non-profit - Other,2,Below the national average,"ONE HOSPITAL DRIVE
 CLARION, PA
-",NA,NA
+",41.1918643,-79.3968156
 390111,HOSPITAL OF UNIV OF PENNSYLVANIA,PHILADELPHIA,PA,19104,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"34TH &amp; SPRUCE STS
 PHILADELPHIA, PA
-",NA,NA
+",32.31691,-81.119796
 390123,POTTSTOWN MEMORIAL MEDICAL CENTER,POTTSTOWN,PA,19464,Acute Care Hospitals,Proprietary,1,Below the national average,"1600 EAST HIGH STREET AND ARMAND HAMMER BLVD
 POTTSTOWN, PA
-",NA,NA
+",40.2440176,-75.6136084
 390146,WARREN GENERAL HOSPITAL,WARREN,PA,16365,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"TWO CRESCENT PARK WEST
 WARREN, PA
-",NA,NA
-390156,MERCY FITZGERALD HOSPITAL,DARBY,PA,19023,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"LANSDOWNE &amp; BAILY RDS
-DARBY, PA
-",NA,NA
+",41.8432642,-79.154718
 390163,ACMH HOSPITAL,KITTANNING,PA,16201,Acute Care Hospitals,Voluntary non-profit - Private,4,Same as the national average,"ONE NOLTE DRIVE
 KITTANNING, PA
-",NA,NA
+",40.8089171,-79.5622006
 390168,BUTLER MEMORIAL HOSPITAL,BUTLER,PA,16001,Acute Care Hospitals,Voluntary non-profit - Private,4,Same as the national average,"ONE HOSPITAL WAY
 BUTLER, PA
-",NA,NA
+",40.8673467,-79.8804145
 390180,CROZER CHESTER MEDICAL CENTER,UPLAND,PA,19013,Acute Care Hospitals,Voluntary non-profit - Other,2,Below the national average,"ONE MEDICAL CENTER BOULEVARD
 UPLAND, PA
-",NA,NA
+",39.8557631,-75.3681915
 390195,MAIN LINE HOSPITAL LANKENAU,WYNNEWOOD,PA,19096,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"100 LANCASTER AVE
 WYNNEWOOD, PA
-",NA,NA
+",39.9883897,-75.2620003
 390219,EXCELA HEALTH LATROBE HOSPITAL,LATROBE,PA,15650,Acute Care Hospitals,Voluntary non-profit - Other,3,Above the national average,"ONE MELLON WAY
 LATROBE, PA
-",NA,NA
+",40.3209298,-79.3946856
 390258,ST MARY MEDICAL CENTER,LANGHORNE,PA,19047,Acute Care Hospitals,Voluntary non-profit - Church,4,Above the national average,"LANGHORNE-NEWTOWN RD
 LANGHORNE, PA
-",NA,NA
+",40.2003996,-74.929481
 400001,PRESBYTERIAN COMMUNITY HOSP,SAN JUAN,PR,00907,Acute Care Hospitals,Voluntary non-profit - Other,3,Not Available,"1451 ASHFORD AVENUE
 SAN JUAN, PR
-",NA,NA
+",18.4550543,-66.0654679
 400016,AUXILIO MUTUO HOSPITAL,HATO REY,PR,00918,Acute Care Hospitals,Voluntary non-profit - Private,2,Not Available,"PONCE DE LEON AVENUE STOP 36 1/2 #735
 HATO REY, PR
-",NA,NA
+",33.7751149,-84.2823576
 400021,HOSPITAL DE LA CONCEPCION,SAN GERMAN,PR,00683,Acute Care Hospitals,Voluntary non-profit - Church,2,Not Available,"ROAD NUMBER 2 KM 173.4 CAIN ALTO
 SAN GERMAN, PR
-",NA,NA
+",18.0861163,-67.0381171
 400022,HOSPITAL DAMAS INC,PONCE,PR,00717,Acute Care Hospitals,Voluntary non-profit - Private,2,Not Available,"PONCE BY PASS #2213
 PONCE, PR
-",NA,NA
+",17.9960098,-66.6242551
 400032,HOSPITAL HERMANOS MELENDEZ INC,BAYAMON,PR,00960,Acute Care Hospitals,Proprietary,2,Not Available,"CARRETERA #2 KM 11 7
 BAYAMON, PR
-",NA,NA
+",33.4627061,-117.6200602
 400044,SAN LUKE'S MEMORIAL HOSPITAL INC,PONCE,PR,00733,Acute Care Hospitals,Voluntary non-profit - Church,2,Not Available,"TITO CASTRO AVE #917
 PONCE, PR
-",NA,NA
+",18.0312283,-66.5927935
 400109,HIMA SAN PABLO BAYAMON,BAYAMON,PR,00961,Acute Care Hospitals,Proprietary,2,Not Available,"CALLE SANTA CRUZ NUMERO 70 URB SANTA CRUZ
 BAYAMON, PR
-",NA,NA
+",18.3977117,-66.1472788
 400114,MANATI MEDICAL CENTER DR OTERO LOPEZ,MANATI,PR,00674,Acute Care Hospitals,Proprietary,2,Not Available,"CALLE HERNANDEZ CARRION URB ATENAS
 MANATI, PR
-",NA,NA
+",18.4345707,-66.4823727
 400120,HIMA SAN PABLO-CAGUAS,CAGUAS,PR,00725,Acute Care Hospitals,Proprietary,2,Not Available,"AVE LUIS MUNOZ MARIN
 CAGUAS, PR
-",NA,NA
-410006,NEWPORT HOSPITAL,NEWPORT,RI,02840,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"FRIENDSHIP STREET
-NEWPORT, RI
-",NA,NA
+",18.2270107,-66.027318
 420011,CANNON MEMORIAL HOSPITAL,PICKENS,SC,29671,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"123 MEDICAL PARK DRIVE PO BOX 188
 PICKENS, SC
-",NA,NA
+",34.8741802,-82.7071459
 420015,BAPTIST EASLEY HOSPITAL,EASLEY,SC,29641,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"PO BOX 2129
 EASLEY, SC
-",NA,NA
+",34.829838,-82.6015206
 420023,ST FRANCIS-DOWNTOWN,GREENVILLE,SC,29601,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"ONE ST FRANCIS DR
 GREENVILLE, SC
-",NA,NA
-420098,TIDELANDS WACCAMAW COMMUNITY HOSPITAL,MURRELLS INLET,SC,29576,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"4070 HIGHWAY 17 BYPASS PO DRAWER 3350
-MURRELLS INLET, SC
-",NA,NA
+",34.8403724,-82.4214408
 420106,PALMETTO HEALTH BAPTIST PARKRIDGE,COLUMBIA,SC,29212,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"400 PALMETTO HEALTH PARKWAY
 COLUMBIA, SC
-",NA,NA
+",34.0875477,-81.1604196
 430014,AVERA ST LUKES,ABERDEEN,SD,57401,Acute Care Hospitals,Voluntary non-profit - Church,5,Above the national average,"305 S STATE ST POST OFFICE BOX 4450
 ABERDEEN, SD
-",NA,NA
+",45.4526353,-98.4961733
 440001,UNICOI COUNTY MEMORIAL HOSPITAL,ERWIN,TN,37650,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"GREENWAY CIRCLE
 ERWIN, TN
-",NA,NA
+",36.1335948,-82.4119463
 440012,WELLMONT BRISTOL REGIONAL MEDICAL CENTER,BRISTOL,TN,37620,Acute Care Hospitals,Government - Hospital District or Authority,3,Above the national average,"ONE MEDICAL PARK BLVD
 BRISTOL, TN
-",NA,NA
+",36.5857156,-82.2567402
 440082,SAINT THOMAS WEST HOSPITAL,NASHVILLE,TN,37205,Acute Care Hospitals,Voluntary non-profit - Church,4,Above the national average,"4220 HARDING RD, PO BOX 380
 NASHVILLE, TN
-",NA,NA
-440175,SOUTHERN TENNESSEE REGIONAL HEALTH SYSTEM LAWRENCE,LAWRENCEBURG,TN,38464,Acute Care Hospitals,Proprietary,4,Same as the national average,"HWY 43 S BOX 847
-LAWRENCEBURG, TN
-",NA,NA
-450032,GOOD SHEPHERD MEDICAL CENTER MARSHALL,MARSHALL,TX,75670,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"811 S WASHINGTON
-MARSHALL, TX
-",NA,NA
+",36.1293178,-86.8444772
 450099,PAMPA REGIONAL MEDICAL CENTER,PAMPA,TX,79065,Acute Care Hospitals,Voluntary non-profit - Private,4,Same as the national average,"1 MEDICAL PLAZA
 PAMPA, TX
-",NA,NA
+",35.5723696,-100.9646846
 450143,SETON SMITHVILLE REGIONAL HOSPITAL,SMITHVILLE,TX,78957,Acute Care Hospitals,Voluntary non-profit - Church,3,Not Available,"1201 HILL RD
 SMITHVILLE, TX
-",NA,NA
-450165,SOUTH TEXAS REGIONAL MEDICAL CENTER,JOURDANTON,TX,78026,Acute Care Hospitals,Proprietary,3,Same as the national average,"1905 HWY 97 EAST
-JOURDANTON, TX
-",NA,NA
-450210,ETMC CARTHAGE,CARTHAGE,TX,75633,Acute Care Hospitals,Voluntary non-profit - Private,3,Not Available,"409 WEST COTTAGE
-CARTHAGE, TX
-",NA,NA
+",30.0041786,-97.1352366
 450237,CHRISTUS SANTA ROSA HOSPITAL,SAN ANTONIO,TX,78207,Acute Care Hospitals,Voluntary non-profit - Church,4,Same as the national average,"333 NORTH SANTA ROSA STEET
 SAN ANTONIO, TX
-",NA,NA
+",29.4280812,-98.498342
 450352,HUNT REGIONAL MEDICAL CENTER,GREENVILLE,TX,75401,Acute Care Hospitals,Government - Hospital District or Authority,3,Same as the national average,"4215 JOE RAMSEY BLVD
 GREENVILLE, TX
-",NA,NA
+",33.1223767,-96.123585
 450369,CHILDRESS REGIONAL MEDICAL CENTER,CHILDRESS,TX,79201,Acute Care Hospitals,Government - Hospital District or Authority,4,Above the national average,"HWY 83 NORTH
 CHILDRESS, TX
-",NA,NA
+",34.4915108,-100.1948774
 450395,MEMORIAL MEDICAL CENTER LIVINGSTON,LIVINGSTON,TX,77351,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"1717 HWY 59 BYPASS
 LIVINGSTON, TX
-",NA,NA
+",30.6922614,-94.9526336
 450662,VALLEY REGIONAL MEDICAL CENTER,BROWNSVILLE,TX,78526,Acute Care Hospitals,Proprietary,3,Below the national average,"100 A ALTON GLOOR
 BROWNSVILLE, TX
-",NA,NA
+",25.9783925,-97.5146917
 451365,SETON HIGHLAND LAKES,BURNET,TX,78611,Critical Access Hospitals,Voluntary non-profit - Private,3,Same as the national average,"HIGHWAY 281 SOUTH
 BURNET, TX
-",NA,NA
+",30.758167,-98.2287597
 460010,INTERMOUNTAIN MEDICAL CENTER,MURRAY,UT,84107,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"5121 SOUTH COTTONWOOD STREET
 MURRAY, UT
-",NA,NA
+",40.6592601,-111.8921757
 470001,CENTRAL VERMONT MEDICAL CENTER,BARRE,VT,05641,Acute Care Hospitals,Voluntary non-profit - Private,4,Same as the national average,"BOX 547
 BARRE, VT
-",NA,NA
+",44.1969972,-72.5019392
 471306,SPRINGFIELD HOSPITAL,SPRINGFIELD,VT,05156,Critical Access Hospitals,Voluntary non-profit - Private,2,Below the national average,"PO BOX 2003
 SPRINGFIELD, VT
-",NA,NA
+",43.2984078,-72.4823117
 490009,UNIVERSITY OF VIRGINIA MEDICAL CENTER,CHARLOTTESVILLE,VA,22908,Acute Care Hospitals,Government - State,2,Same as the national average,"JEFFERSON PARK AVE
 CHARLOTTESVILLE, VA
-",NA,NA
+",38.027823,-78.5109454
 490117,CARILION TAZEWELL COMMUNITY HOSPITAL,TAZEWELL,VA,24651,Acute Care Hospitals,Voluntary non-profit - Other,3,Same as the national average,"388 BEN BOLT AVENUE
 TAZEWELL, VA
-",NA,NA
+",37.1237401,-81.4890367
+490126,LEWISGALE HOSPITAL ALLEGHANY,LOW MOOR,VA,24457,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"ONE ARH LANE - PO BOX 7
+LOW MOOR, VA
+",37.7919428,-79.8808027
+500044,MULTICARE DEACONESS HOSPITAL,SPOKANE,WA,99210,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"W 800 FIFTH AVENUE
+SPOKANE, WA
+",47.6520085,-117.4232933
+500051,OVERLAKE HOSPITAL MEDICAL CENTER,BELLEVUE,WA,98004,Acute Care Hospitals,Voluntary non-profit - Other,3,Same as the national average,"1035-116TH AVE NE
+BELLEVUE, WA
+",47.6201881,-122.1873435
+501305,LINCOLN HOSPITAL,DAVENPORT,WA,99122,Critical Access Hospitals,Government - Hospital District or Authority,4,Above the national average,"10 NICHOLS STREET
+DAVENPORT, WA
+",47.65719,-118.1464461
+510002,GREENBRIER VALLEY MEDICAL CENTER,RONCEVERTE,WV,24970,Acute Care Hospitals,Proprietary,3,Below the national average,"1320 MAPLEWOOD AVENUE
+RONCEVERTE, WV
+",37.7720721,-80.4685802
+520037,MARSHFIELD MEDICAL CENTER,MARSHFIELD,WI,54449,Acute Care Hospitals,Voluntary non-profit - Church,2,Below the national average,"611 ST JOSEPH AVE
+MARSHFIELD, WI
+",44.6780444,-90.1770418
+520103,COMMUNITY MEMORIAL HOSPITAL,MENOMONEE FALLS,WI,53051,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"W180 N8085 TOWN HALL RD
+MENOMONEE FALLS, WI
+",43.1641812,-88.1373915
+480001,"ROY LESTER SCHNEIDER HOSPITAL,THE",ST THOMAS,VI,00801,Acute Care Hospitals,Government - Local,2,Below the national average,"9048 SUGAR ESTATE
+ST THOMAS, VI
+",18.340328,-64.9146707
+520207,AURORA MEDICAL CENTER,GRAFTON,WI,53024,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"975 PORT WASHINGTON ROAD
+GRAFTON, WI
+",43.3237852,-87.9285543
+521332,SPOONER HEALTH SYSTEM,SPOONER,WI,54801,Critical Access Hospitals,Voluntary non-profit - Private,3,Not Available,"1280 CHANDLER DR
+SPOONER, WI
+",45.8414491,-91.871935
+670004,ST MARKS MEDICAL CENTER,LA GRANGE,TX,78945,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"ONE ST MARK'S PLACE
+LA GRANGE, TX
+",29.9353329,-96.8762482
+650001,GUAM MEMORIAL HOSPITAL AUTHORITY,TAMUNING,GU,96913,Acute Care Hospitals,Government - Local,3,Not Available,"85O GOV CARLOS G CAMACHO ROAD
+TAMUNING, GU
+",13.5048539,144.7745069
+050280,MERCY MEDICAL CENTER REDDING,REDDING,CA,96001,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"2175 ROSALINE AVE, CLAIRMONT HGTS
+REDDING, CA
+",40.5718769,-122.3952436
+050309,SUTTER ROSEVILLE MEDICAL CENTER,ROSEVILLE,CA,95661,Acute Care Hospitals,Voluntary non-profit - Other,4,Same as the national average,"ONE MEDICAL PLAZA
+ROSEVILLE, CA
+",38.7664134,-121.2493333
+070006,STAMFORD HOSPITAL,STAMFORD,CT,06904,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"ONE HOSPITAL PLAZA
+STAMFORD, CT
+",41.0544448,-73.5522909
+070016,SAINT MARY'S HOSPITAL,WATERBURY,CT,06706,Acute Care Hospitals,Voluntary non-profit - Other,3,Below the national average,"56 FRANKLIN STEET
+WATERBURY, CT
+",41.5524757,-73.0366088
+070029,BRISTOL HOSPITAL,BRISTOL,CT,06010,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"BREWSTER RD
+BRISTOL, CT
+",41.6759584,-72.9357625
+100054,TWIN CITIES HOSPITAL,NICEVILLE,FL,32578,Acute Care Hospitals,Proprietary,4,Above the national average,"2190 HWY 85 N
+NICEVILLE, FL
+",35.55533,-120.719749
+110030,CARTERSVILLE MEDICAL CENTER,CARTERSVILLE,GA,30120,Acute Care Hospitals,Voluntary non-profit - Private,4,Below the national average,"960 JOE FRANK HARRIS PARKWAY
+CARTERSVILLE, GA
+",34.1995441,-84.7932932
+110041,HABERSHAM COUNTY MEDICAL CTR,DEMOREST,GA,30535,Acute Care Hospitals,Government - Hospital District or Authority,3,Same as the national average,"541 HISTORIC HIGHWAY 441-NORTH
+DEMOREST, GA
+",34.5810438,-83.5370886
+140015,BLESSING HOSPITAL,QUINCY,IL,62301,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"BROADWAY AT 11TH STREET
+QUINCY, IL
+",39.9369171,-91.3992118
+140286,KISHWAUKEE COMMUNITY HOSPITAL,DEKALB,IL,60115,Acute Care Hospitals,Voluntary non-profit - Private,4,Same as the national average,"ONE KISH HOSPITAL DRIVE
+DEKALB, IL
+",41.9613809,-88.7226569
+160089,OTTUMWA REGIONAL HEALTH CENTER,OTTUMWA,IA,52501,Acute Care Hospitals,Proprietary,3,Below the national average,"1001 E PENNSYLVANIA
+OTTUMWA, IA
+",41.0288888,-92.3895049
+220086,BETH ISRAEL DEACONESS MEDICAL CENTER,BOSTON,MA,02215,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"330 BROOKLINE AVENUE
+BOSTON, MA
+",42.3389344,-71.1073504
+221300,MARTHA'S VINEYARD HOSPITAL INC,OAK BLUFFS,MA,02557,Critical Access Hospitals,Voluntary non-profit - Private,4,Above the national average,"ONE HOSPITAL ROAD, FIRST FL, WING 5, PO BOX 1477
+OAK BLUFFS, MA
+",41.4607418,-70.5798028
+230269,"BEAUMONT HOSPITAL, TROY",TROY,MI,48085,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"44201 DEQUINDRE ROAD
+TROY, MI
+",42.6189457,-83.0935084
+230273,DETROIT RECEIVING HOSPITAL & UNIV HEALTH CENTER,DETROIT,MI,48201,Acute Care Hospitals,Proprietary,1,Below the national average,"4201 ST ANTOINE ST - 3M
+DETROIT, MI
+",42.3532334,-83.0554735
+250097,SOUTHWEST MS REGIONAL MEDICAL CENTER,MCCOMB,MS,39649,Acute Care Hospitals,Government - Local,2,Below the national average,"215 MARION AV BOX 1307
+MCCOMB, MS
+",31.2510174,-90.4744002
+251309,FIELD HEALTH SYSTEM,CENTREVILLE,MS,39631,Critical Access Hospitals,Government - Local,2,Not Available,"178 HIGHWAY 24
+CENTREVILLE, MS
+",31.0821139,-91.0588106
+270003,ST PETER'S HOSPITAL,HELENA,MT,59601,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"2475 BROADWAY
+HELENA, MT
+",46.5841413,-111.9946923
+281326,ANTELOPE MEMORIAL HOSPITAL,NELIGH,NE,68756,Critical Access Hospitals,Voluntary non-profit - Private,3,Not Available,"P O BOX 229, 102 WEST 9TH ST
+NELIGH, NE
+",42.1342179,-98.0307509
+290041,SUMMERLIN HOSPITAL MEDICAL CENTER,LAS VEGAS,NV,89144,Acute Care Hospitals,Proprietary,3,Below the national average,"657 TOWN CENTER DRIVE
+LAS VEGAS, NV
+",36.1811582,-115.3168257
+310034,RIVERVIEW MEDICAL CENTER,RED BANK,NJ,07701,Acute Care Hospitals,Proprietary,3,Same as the national average,"ONE RIVERVIEW PLAZA
+RED BANK, NJ
+",40.3537476,-74.0636244
+310044,CAPITAL HEALTH MEDICAL CENTER - HOPEWELL,PENNINGTON,NJ,08534,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"ONE CAPITAL WAY
+PENNINGTON, NJ
+",40.2928234,-74.8049539
+310091,MEMORIAL HOSPITAL OF SALEM COUNTY,SALEM,NJ,08079,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"310 WOODSTOWN ROAD
+SALEM, NJ
+",39.5940226,-75.4445128
+330024,MOUNT SINAI HOSPITAL,NEW YORK,NY,10029,Acute Care Hospitals,Voluntary non-profit - Private,3,Below the national average,"ONE GUSTAVE L LEVY PLACE
+NEW YORK, NY
+",40.7900393,-73.9522547
+330049,NORTHERN DUTCHESS HOSPITAL,RHINEBECK,NY,12572,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"6511 SPRINGBROOK AVENUE
+RHINEBECK, NY
+",41.9354122,-73.912754
+330136,MARY IMOGENE BASSETT HOSPITAL,COOPERSTOWN,NY,13326,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"ONE ATWELL ROAD
+COOPERSTOWN, NY
+",42.695987,-74.923303
+330195,LONG ISLAND JEWISH MEDICAL CENTER,NEW HYDE PARK,NY,11040,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"270 - 05 76TH AVENUE
+NEW HYDE PARK, NY
+",40.7544453,-73.7077153
+330386,CATSKILL REGIONAL MEDICAL CENTER,HARRIS,NY,12742,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"68 HARRIS BUSHVILLE ROAD
+HARRIS, NY
+",41.7093262,-74.7373215
+340030,DUKE UNIVERSITY HOSPITAL,DURHAM,NC,27710,Acute Care Hospitals,Proprietary,4,Above the national average,"PO BOX 3814 DUMC ERWIN RD
+DURHAM, NC
+",36.0078404,-78.9380188
+340047,NORTH CAROLINA BAPTIST HOSPITAL,WINSTON-SALEM,NC,27157,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"MEDICAL CENTER BOULEVARD
+WINSTON-SALEM, NC
+",36.089796,-80.268565
+340171,NOVANT HEALTH MATTHEWS MEDICAL CENTER,MATTHEWS,NC,28106,Acute Care Hospitals,Voluntary non-profit - Other,4,Below the national average,"1500 MATTHEWS TWNSHP PRKWY BOX 3310
+MATTHEWS, NC
+",35.120014,-80.7140524
+351318,CARRINGTON HEALTH CENTER,CARRINGTON,ND,58421,Critical Access Hospitals,Voluntary non-profit - Private,4,Not Available,"PO BOX 461
+CARRINGTON, ND
+",47.4543891,-99.1231665
+360133,GRANDVIEW HOSPITAL & MEDICAL CENTER,DAYTON,OH,45405,Acute Care Hospitals,Voluntary non-profit - Other,4,Above the national average,"405 GRAND AVENUE
+DAYTON, OH
+",33.4325619,-86.7186147
+370048,MCCURTAIN MEMORIAL HOSPITAL,IDABEL,OK,74745,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"1301 LINCOLN ROAD
+IDABEL, OK
+",33.8831378,-94.7907256
+370183,HILLCREST HOSPITAL HENRYETTA,HENRYETTA,OK,74437,Acute Care Hospitals,Proprietary,3,Not Available,"2401 W MAIN DEWEY
+HENRYETTA, OK
+",35.4385127,-96.0157216
+390156,MERCY FITZGERALD HOSPITAL,DARBY,PA,19023,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"LANSDOWNE &amp; BAILY RDS
+DARBY, PA
+",39.9268457,-75.2686695
+410006,NEWPORT HOSPITAL,NEWPORT,RI,02840,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"FRIENDSHIP STREET
+NEWPORT, RI
+",41.4970949,-71.3063265
+420098,TIDELANDS WACCAMAW COMMUNITY HOSPITAL,MURRELLS INLET,SC,29576,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"4070 HIGHWAY 17 BYPASS PO DRAWER 3350
+MURRELLS INLET, SC
+",33.5605554,-79.0430531
+440175,SOUTHERN TENNESSEE REGIONAL HEALTH SYSTEM LAWRENCE,LAWRENCEBURG,TN,38464,Acute Care Hospitals,Proprietary,4,Same as the national average,"HWY 43 S BOX 847
+LAWRENCEBURG, TN
+",35.222435,-87.337946
+450032,GOOD SHEPHERD MEDICAL CENTER MARSHALL,MARSHALL,TX,75670,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"811 S WASHINGTON
+MARSHALL, TX
+",32.5010807,-94.730149
+450165,SOUTH TEXAS REGIONAL MEDICAL CENTER,JOURDANTON,TX,78026,Acute Care Hospitals,Proprietary,3,Same as the national average,"1905 HWY 97 EAST
+JOURDANTON, TX
+",28.9326367,-98.525852
+450210,ETMC CARTHAGE,CARTHAGE,TX,75633,Acute Care Hospitals,Voluntary non-profit - Private,3,Not Available,"409 WEST COTTAGE
+CARTHAGE, TX
+",32.1673376,-94.3468817
+500129,TACOMA GENERAL ALLENMORE HOSPITAL,TACOMA,WA,98405,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"315 S MLK JR WAY
+TACOMA, WA
+",47.2415959,-122.4811334
+510001,WEST VIRGINIA UNIVERSITY HOSPITALS,MORGANTOWN,WV,26506,Acute Care Hospitals,Voluntary non-profit - Private,2,Same as the national average,"MEDICAL CENTER DRIVE
+MORGANTOWN, WV
+",39.6542224,-79.9573211
+510072,WETZEL COUNTY HOSPITAL,NEW MARTINSVILLE,WV,26155,Acute Care Hospitals,Government - Local,3,Not Available,"#3 EAST BENJAMIN DRIVE
+NEW MARTINSVILLE, WV
+",39.6810712,-80.8501977
 490112,CJW MEDICAL CENTER,RICHMOND,VA,23235,Acute Care Hospitals,Proprietary,2,Below the national average,"7101 JAHNKE ROAD
 RICHMOND, VA
 ",37.515832, -77.52488
-490126,LEWISGALE HOSPITAL ALLEGHANY,LOW MOOR,VA,24457,Acute Care Hospitals,Voluntary non-profit - Private,3,Same as the national average,"ONE ARH LANE - PO BOX 7
-LOW MOOR, VA
-",NA,NA
-500044,MULTICARE DEACONESS HOSPITAL,SPOKANE,WA,99210,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"W 800 FIFTH AVENUE
-SPOKANE, WA
-",NA,NA
-500051,OVERLAKE HOSPITAL MEDICAL CENTER,BELLEVUE,WA,98004,Acute Care Hospitals,Voluntary non-profit - Other,3,Same as the national average,"1035-116TH AVE NE
-BELLEVUE, WA
-",NA,NA
-500129,TACOMA GENERAL ALLENMORE HOSPITAL,TACOMA,WA,98405,Acute Care Hospitals,Voluntary non-profit - Private,2,Below the national average,"315 S MLK JR WAY
-TACOMA, WA
-",NA,NA
-501305,LINCOLN HOSPITAL,DAVENPORT,WA,99122,Critical Access Hospitals,Government - Hospital District or Authority,4,Above the national average,"10 NICHOLS STREET
-DAVENPORT, WA
-",NA,NA
-510001,WEST VIRGINIA UNIVERSITY HOSPITALS,MORGANTOWN,WV,26506,Acute Care Hospitals,Voluntary non-profit - Private,2,Same as the national average,"MEDICAL CENTER DRIVE
-MORGANTOWN, WV
-",NA,NA
-510002,GREENBRIER VALLEY MEDICAL CENTER,RONCEVERTE,WV,24970,Acute Care Hospitals,Proprietary,3,Below the national average,"1320 MAPLEWOOD AVENUE
-RONCEVERTE, WV
-",NA,NA
-510072,WETZEL COUNTY HOSPITAL,NEW MARTINSVILLE,WV,26155,Acute Care Hospitals,Government - Local,3,Not Available,"#3 EAST BENJAMIN DRIVE
-NEW MARTINSVILLE, WV
-",NA,NA
-520037,MARSHFIELD MEDICAL CENTER,MARSHFIELD,WI,54449,Acute Care Hospitals,Voluntary non-profit - Church,2,Below the national average,"611 ST JOSEPH AVE
-MARSHFIELD, WI
-",NA,NA
-520103,COMMUNITY MEMORIAL HOSPITAL,MENOMONEE FALLS,WI,53051,Acute Care Hospitals,Voluntary non-profit - Private,3,Above the national average,"W180 N8085 TOWN HALL RD
-MENOMONEE FALLS, WI
-",NA,NA
-480001,"ROY LESTER SCHNEIDER HOSPITAL,THE",ST THOMAS,VI,00801,Acute Care Hospitals,Government - Local,2,Below the national average,"9048 SUGAR ESTATE
-ST THOMAS, VI
-",NA,NA
-520207,AURORA MEDICAL CENTER,GRAFTON,WI,53024,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"975 PORT WASHINGTON ROAD
-GRAFTON, WI
-",NA,NA
-521332,SPOONER HEALTH SYSTEM,SPOONER,WI,54801,Critical Access Hospitals,Voluntary non-profit - Private,3,Not Available,"1280 CHANDLER DR
-SPOONER, WI
-",NA,NA
-670004,ST MARKS MEDICAL CENTER,LA GRANGE,TX,78945,Acute Care Hospitals,Voluntary non-profit - Private,4,Above the national average,"ONE ST MARK'S PLACE
-LA GRANGE, TX
-",NA,NA
 010055,FLOWERS HOSPITAL,DOTHAN,AL,36305,Acute Care Hospitals,Proprietary,4,Above the national average,"4370 WEST MAIN STREET
 DOTHAN, AL
 ",31.235991, -85.457937
-650001,GUAM MEMORIAL HOSPITAL AUTHORITY,TAMUNING,GU,96913,Acute Care Hospitals,Government - Local,3,Not Available,"85O GOV CARLOS G CAMACHO ROAD
-TAMUNING, GU
-",NA,NA
 040069,GREAT RIVER MEDICAL CENTER,BLYTHEVILLE,AR,72315,Acute Care Hospitals,Voluntary non-profit - Other,2,Below the national average,"1520 N DIVISION STREET
 BLYTHEVILLE, AR
 ",35.943011, -89.918929
