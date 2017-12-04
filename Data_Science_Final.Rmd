@@ -216,4 +216,62 @@ medicare_usnews %>%
   scale_fill_discrete(name = "")
 ```
 
+```{r, logit}
+##logistic modelling - binary outcome (patient experience - above and below national average)
 
+##recode model 
+hospital_data_logistic_regression =  hospital_data_2 %>%
+filter(patient_experience_national_comparison != "Not Available") %>%
+filter(patient_experience_national_comparison != "Same as the national average") %>%
+mutate(patient_experience_national_comparison = recode(patient_experience_national_comparison, "Above the national average" = "1", "Below the national average" = "0")) %>%
+mutate(patient_experience_national_comparison = recode(patient_experience_national_comparison, "Above the national average" = "1", "Below the national average" = "0")) 
+
+
+##making column 9 numeric with lapply
+hospital_data_logistic_regression[,9] <- lapply(hospital_data_logistic_regression[,9], as.numeric)
+
+##using glm with binomial distribution for model 
+mylogit <- glm(patient_experience_national_comparison ~ hospital_ownership + hospital_overall_rating + hospital_type, data = hospital_data_logistic_regression, family = "binomial")
+
+View(mylogit)
+
+##revising data set to collapse government
+hospital_data_logistic_regression_comp <- hospital_data_logistic_regression %>%
+mutate(hospital_ownership = recode(hospital_ownership, "Government - Local" = "Government", "Government - State" = "Government", "Government - Hospital District or Authority" = "Government", "Government - Federal" = "Government")) 
+
+View(hospital_data_logistic_regression_comp)
+
+##creating function to run regression model
+hospitaldata_logm = function(df){
+glm(patient_experience_national_comparison ~ hospital_ownership + hospital_overall_rating + hospital_type, data = hospital_data_logistic_regression_comp, family = "binomial")
+}
+
+View(mylogitcomp)
+
+summary(mylogitcomp)
+
+hospital_data_lr_df = 
+  hospital_data_logistic_regression_comp %>% 
+  nest(provider_id:patient_experience_national_comparison) %>%
+  mutate(models = map(data, hospitaldata_logm),
+         results = map(models, broom::tidy)) %>%
+  select(results) %>% 
+  unnest() 
+
+hospital_data_lr_df <- hospital_data_lr_df[c(1, 2, 3, 4, 5, 6, 7, 8),]   
+View(hospital_data_lr_df)
+
+library(knitr)
+library(kableExtra)
+kable(hospital_data_lr_df, caption = "Model Componnents of our patient experience model") %>%
+kable_styling(bootstrap_options = c("striped", "hover"))
+
+##May not be able to run with package kableExtra
+library(knitr)
+library(kableExtra)
+kable(hospital_data_lr_df, caption = "Model Componnents of our patient experience model") %>%
+  kable_styling("striped", full_width = F) %>%
+  column_spec(5, bold = T) %>%
+  row_spec(7:8, bold = T, color = "white", background = "#D7261E") %>%
+  row_spec(3, bold = T, color = "white", background = "#D7261E") 
+```
