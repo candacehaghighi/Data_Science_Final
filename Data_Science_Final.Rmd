@@ -7,7 +7,7 @@ output: html_document
 >Quick Intro... Please make sure that when you type in your section that the code chunk does not push too far down! This will 'bleed' into the next person's section and may cause issues when merging - thank you!!
 
 
-```{r, Claire's section (line 10-110; used for bringing in, cleaning, merging, etc. data)}
+```{r, Claire section (line 10-110; used for bringing in, cleaning, merging, etc. data)}
 
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
@@ -206,7 +206,7 @@ ggplotly(scatter_patient)
 
 
 
-```{r, Nick's section 120-220}
+```{r, Nick section 120-220}
 
 
 
@@ -316,7 +316,7 @@ ggplotly(scatter_patient)
 
 
 
-```{r, Carolina's section 230 - 330 }
+```{r, Carolina section 230 - 330 }
 
 library(rvest)
 library(httr)
@@ -420,7 +420,7 @@ hospital_function(urls)
 
 
 
-```{r, Candace's section 340 - 440}
+```{r, Candace section 340 - 440}
 library(tidyverse)
 
 
