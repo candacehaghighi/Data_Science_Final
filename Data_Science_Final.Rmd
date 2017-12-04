@@ -41,43 +41,50 @@ hospital_data_missing = read_csv(file = "./data/Hospital_General_Information.csv
   filter(is.na(coordinates)) %>%
   mutate(coordinates = map(address, ggmap::geocode))
 
-hospital_data_missing_2 <- hospital_data_missing %>% 
-  select(provider_id, hospital_name, coordinates) %>% 
-  unnest() %>% 
-  filter(is.na(lon)) %>% 
+hospital_data_missing_clean <- hospital_data_missing %>% 
+  unnest() %>%
+  rename(Longitudes = lon, Latitudes = lat)
+  
+hospital_data_missing_2 <- hospital_data_missing_clean %>% 
+  filter(is.na(Longitudes)) %>%
   mutate(coordinates_2 = map(hospital_name, ggmap::geocode))
 
-hospital_data_missing_2 <- hospital_data_missing_2 %>% 
-  select(everything(), -lon, -lat) %>% 
-  unnest() %>% 
+hospital_data_missing_2_clean <- hospital_data_missing_2 %>% 
+  select(everything(), -Longitudes, -Latitudes) %>% 
+  unnest() %>%
   rename(Longitudes = lon, Latitudes = lat)
 
-hospital_data_2 <-
-  left_join(hospital_data, hospital_data_missing_2, by = "provider_id") %>% 
-  select(everything(), -c(hospital_name.y:Latitudes.y)) %>% 
-  rename(Latitudes = Latitudes.x,
-         Longitudes = Longitudes.x,
-         hospital_name = hospital_name.x)
+hospital_data_2 <- 
+  bind_rows(hospital_data_missing_clean, hospital_data_missing_2_clean) %>%
+  drop_na() %>%
+  select(c(provider_id:address), Latitudes, Longitudes) %>%
+  mutate(Latitudes = as.character(Latitudes),
+         Longitudes = as.character(Longitudes)) %>% 
+  bind_rows(hospital_data) %>%
+  drop_na()
 
 write_csv(hospital_data_2, "./data/hospital_data_2.csv")
+hospital_data_2 <- read_csv("./data/hospital_data_2.csv")
+```
 
+```{r}
 # hospital rating based on hospital type (boxplot)
 box_ggplot_type =
-hospital_data %>% 
+hospital_data_2 %>% 
    mutate(hospital_type = fct_reorder(hospital_type, hospital_overall_rating)) %>%
 ggplot(aes(x = hospital_type, y = hospital_overall_rating, group = hospital_type)) + geom_boxplot(aes(color = hospital_type)) + labs(title = "Distribution of Hospital Rating Based on Hospital Type", x = "Hospital Type", y = "Hospital Rating") + theme_classic() + theme(axis.text.x = element_text(hjust = 1), plot.title = element_text(hjust = 0.5))
 box_ggplot_type
 
 # hospital rating based on ownership (boxplot)
 box_ggplot_owner =
-hospital_data %>% 
+hospital_data_2 %>% 
    mutate(hospital_ownership = fct_reorder(hospital_ownership, hospital_overall_rating)) %>%
 ggplot(aes(x = hospital_ownership, y = hospital_overall_rating, group = hospital_ownership)) + geom_boxplot(aes(color = hospital_ownership)) + labs(title = "Distribution of Hospital Rating Based on Hospital Ownership", x = "Hospital Ownership", y = "Hospital Rating") + theme_classic() + theme(axis.text.x = element_text(angle = 120, hjust = 1)) + theme(axis.text.x = element_text(hjust = 1), plot.title = element_text(hjust = 0.5))
 ggplotly(box_ggplot_owner)
 
 
 # hospital rating distribution (barplot)
-hospital_data %>% 
+hospital_data_2 %>% 
   mutate(hospital_overall_rating = as.character(hospital_overall_rating)) %>%
   count(hospital_overall_rating) %>% 
   mutate(hospital_overall_rating = fct_reorder(hospital_overall_rating, n)) %>% 
@@ -89,7 +96,7 @@ hospital_data %>%
     layout(xaxis = list(title = 'Hospital Rating'))
 
 # hospital rating and Patient Experience Level (Scatter plot)
-scatter_patient = hospital_data %>%
+scatter_patient = hospital_data_2 %>%
   filter(!(patient_experience_national_comparison == "Not Available")) %>%
   ggplot(aes(x = patient_experience_national_comparison, y = hospital_overall_rating, color = hospital_overall_rating)) +
   geom_point(alpha = 0.25) +
@@ -97,224 +104,9 @@ scatter_patient = hospital_data %>%
   coord_cartesian() + labs(title = "Hospital Rating and Patient Experience level", x = "Patient Experience Level", y = "Hospital Rating") +
   theme_classic()
 ggplotly(scatter_patient)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
-
-
-
-##Plots 
-
-
-
-
-```{r, Nick section 120-220}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
-
-
 
 ##Any additional plots and changes 
-
-
-
 
 ```{r, Carolina section 230 - 330 }
 
@@ -336,7 +128,7 @@ honor_roll_html <- read_html(url)
 
 rank <- honor_roll_html %>% html_nodes("td:nth-child(1)") %>% html_text() %>% data.frame() %>% rename(rank = ".")
 
-hospital_name < -honor_roll_html %>% html_nodes("td:nth-child(2)") %>% html_text() %>% data.frame() %>% rename(hospital = ".")
+hospital_name <- honor_roll_html %>% html_nodes("td:nth-child(2)") %>% html_text() %>% data.frame() %>% rename(hospital = ".")
 
 points <- honor_roll_html %>% html_nodes("td:nth-child(3)") %>% html_text() %>% data.frame() %>% rename(points = ".") %>% mutate(points = as.numeric(as.character(points))) 
 
@@ -368,62 +160,10 @@ hospital_honor_roll_2017 <- honor_roll_scrape("https://health.usnews.com/health-
 ny_hospitalranks_html <- read_html("https://health.usnews.com/best-hospitals/area/new-york-ny")
 
 ny_hospitals <- ny_hospitalranks_html %>% html_nodes(".search-result-link") %>% html_text() %>% data.frame() %>% rename(hospitals = ".") 
-
-#This doesn't work. 
-hospital_function <- function(url) {
-  url %>% html_nodes(".search-result-link") %>% html_node()
-}
-
-urls <-stringr::str_c(ny_hospitalranks_html, 1:10)
-ny_hospitals_test<-map(urls, hospital_function)
-
-hospital_function(urls)
-
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##Extra Space 
-
-
-
-
 ```{r, Candace section 340 - 440}
-library(tidyverse)
-
-
 ##Creating new data set w/ normalized column values for points
 hospital_honor_roll_2016_newc = hospital_honor_roll_2016 %>%
 ##used normalized value (b-a)*(W-c)/(d+c)+a
@@ -440,17 +180,14 @@ Merged_dataset <- full_join(hospital_honor_roll_2016_new, hospital_data_2, by = 
 
 medicare_hospitals <- Merged_dataset %>% select(hospital, hospital_name, provider_id, hospital_overall_rating) %>% mutate(score = hospital_overall_rating, ranking_type = "medicare") %>% select(hospital, hospital_name, provider_id, score, ranking_type)
 
-
 usnews_hospitals <- Merged_dataset %>% select(hospital,hospital_name, provider_id, new_score) %>% mutate(score = new_score, ranking_type = "usnews") %>% select(hospital, hospital_name, provider_id, score, ranking_type)
 
 medicare_usnews <- rbind(medicare_hospitals, usnews_hospitals)
 
-
-
+# Additional scatterplot - not used
 medicare_usnews %>%
   ggplot(aes(x = hospital, y = score, col = ranking_type)) +
   geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
-
 
 medicare_usnews %>%
   arrange(desc(score)) %>% 
@@ -471,95 +208,6 @@ medicare_usnews %>%
   coord_flip() +
   ylab("USNews score - Medicare score") +
   scale_fill_discrete(name = "")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
 
 
