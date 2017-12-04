@@ -59,6 +59,8 @@ hospital_data_2 <-
          Longitudes = Longitudes.x,
          hospital_name = hospital_name.x)
 
+write_csv(hospital_data_2, "./data/hospital_data_2.csv")
+
 # hospital rating based on hospital type (boxplot)
 box_ggplot_type =
 hospital_data %>% 
