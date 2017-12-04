@@ -28,8 +28,7 @@ hospital_data = read_csv(file = "./data/Hospital_General_Information.csv", col_n
   filter(!is.na(hospital_overall_rating)) %>%
   separate(location, into = c("address", "coordinates"), sep = "\\(") %>% 
   mutate(coordinates = str_sub(coordinates, 1, -2)) %>% 
-  filter(!is.na(coordinates)) %>%
-separate(coordinates, into = c("Latitudes", "Longitudes"), sep = ",")
+  separate(coordinates, into = c("Latitudes", "Longitudes"), sep = ",")
 
 # Do not run this code - the `geocode` function takes a long time
 hospital_data_missing = read_csv(file = "./data/Hospital_General_Information.csv", col_names = TRUE) %>% 
@@ -39,7 +38,7 @@ hospital_data_missing = read_csv(file = "./data/Hospital_General_Information.csv
   filter(!is.na(hospital_overall_rating)) %>%
   separate(location, into = c("address", "coordinates"), sep = "\\(") %>% 
   mutate(coordinates = str_sub(coordinates, 1, -2)) %>% 
-  filter(is.na(coordinates)) %>% 
+  filter(is.na(coordinates)) %>%
   mutate(coordinates = map(address, ggmap::geocode))
 
 hospital_data_missing_2 <- hospital_data_missing %>% 
@@ -47,6 +46,18 @@ hospital_data_missing_2 <- hospital_data_missing %>%
   unnest() %>% 
   filter(is.na(lon)) %>% 
   mutate(coordinates_2 = map(hospital_name, ggmap::geocode))
+
+hospital_data_missing_2 <- hospital_data_missing_2 %>% 
+  select(everything(), -lon, -lat) %>% 
+  unnest() %>% 
+  rename(Longitudes = lon, Latitudes = lat)
+
+hospital_data_2 <-
+  left_join(hospital_data, hospital_data_missing_2, by = "provider_id") %>% 
+  select(everything(), -c(hospital_name.y:Latitudes.y)) %>% 
+  rename(Latitudes = Latitudes.x,
+         Longitudes = Longitudes.x,
+         hospital_name = hospital_name.x)
 
 # hospital rating based on hospital type (boxplot)
 box_ggplot_type =
@@ -321,15 +332,15 @@ honor_roll_scrape <- function(url) {
 
 honor_roll_html <- read_html(url)
 
-rank<- honor_roll_html %>% html_nodes("td:nth-child(1)") %>% html_text() %>% data.frame() %>% rename(rank = ".")
+rank <- honor_roll_html %>% html_nodes("td:nth-child(1)") %>% html_text() %>% data.frame() %>% rename(rank = ".")
 
-hospital_name <-honor_roll_html %>% html_nodes("td:nth-child(2)") %>% html_text() %>% data.frame() %>% rename(hospital = ".")
+hospital_name < -honor_roll_html %>% html_nodes("td:nth-child(2)") %>% html_text() %>% data.frame() %>% rename(hospital = ".")
 
-points <-honor_roll_html %>% html_nodes("td:nth-child(3)") %>% html_text() %>% data.frame() %>% rename(points = ".") %>% mutate(points = as.numeric(as.character(points))) 
+points <- honor_roll_html %>% html_nodes("td:nth-child(3)") %>% html_text() %>% data.frame() %>% rename(points = ".") %>% mutate(points = as.numeric(as.character(points))) 
 
-hospitals_honor_roll <-cbind(rank, hospital_name, points)
+hospitals_honor_roll <- cbind(rank, hospital_name, points)
 
-hospitals_honor_roll <-hospitals_honor_roll[2:21,]
+hospitals_honor_roll <- hospitals_honor_roll[2:21,]
 }
 
 
@@ -414,7 +425,7 @@ library(tidyverse)
 ##Creating new data set w/ normalized column values for points
 hospital_honor_roll_2016_newc = hospital_honor_roll_2016 %>%
 ##used normalized value (b-a)*(W-c)/(d+c)+a
-mutate(new_score = (4*points/480+1)) 
+mutate(new_score = (4 * points/480 + 1)) 
 
 ##Create vector
 provider_id = c("240010", "360180", "220071", "210009", "050376", "330101", "050454", "140281", "390223", "330214", "260032", "390164", "220110", "050441", "330024", "340030", "050625", "230046", "450358", "060024")
@@ -423,14 +434,14 @@ provider_id = c("240010", "360180", "220071", "210009", "050376", "330101", "050
 hospital_honor_roll_2016_new <- cbind(hospital_honor_roll_2016_newc, provider_id)
 
 ##Merging w/ new column
-Merged_dataset <- left_join(hospital_honor_roll_2016_new, hospital_data, by = "provider_id")
+Merged_dataset <- full_join(hospital_honor_roll_2016_new, hospital_data_2, by = "provider_id")
 
-medicare_hospitals<- Merged_dataset %>% select(hospital, hospital_name, provider_id, hospital_overall_rating) %>% mutate(score = hospital_overall_rating, ranking_type = "medicare") %>% select(hospital, hospital_name, provider_id, score, ranking_type)
+medicare_hospitals <- Merged_dataset %>% select(hospital, hospital_name, provider_id, hospital_overall_rating) %>% mutate(score = hospital_overall_rating, ranking_type = "medicare") %>% select(hospital, hospital_name, provider_id, score, ranking_type)
 
 
 usnews_hospitals <- Merged_dataset %>% select(hospital,hospital_name, provider_id, new_score) %>% mutate(score = new_score, ranking_type = "usnews") %>% select(hospital, hospital_name, provider_id, score, ranking_type)
 
-medicare_usnews<- rbind(medicare_hospitals, usnews_hospitals)
+medicare_usnews <- rbind(medicare_hospitals, usnews_hospitals)
 
 
 
@@ -445,6 +456,19 @@ medicare_usnews %>%
   ggplot(aes(x = hospital, y = score, fill = ranking_type)) +
   geom_bar(stat = "identity", position = "dodge") +
   theme(axis.text.x = element_text(angle = 70, hjust = 1))
+
+# Creates a chart of the differences between the USNews and Medicare scores
+medicare_usnews %>% 
+  drop_na() %>% 
+  spread(key = ranking_type, value = score) %>%
+  mutate(score_diff = usnews - medicare) %>%
+  mutate(pos_score_diff = ifelse(score_diff < 0, "Medicare > USNews", "USNews > Medicare")) %>% 
+  mutate(hospital = fct_reorder(hospital, score_diff)) %>%
+  ggplot(aes(hospital, score_diff, fill = pos_score_diff)) +
+  geom_col() +
+  coord_flip() +
+  ylab("USNews score - Medicare score") +
+  scale_fill_discrete(name = "")
 
 
 
