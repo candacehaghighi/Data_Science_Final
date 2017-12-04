@@ -421,7 +421,6 @@ hospital_function(urls)
 ```{r, Candace section 340 - 440}
 library(tidyverse)
 
-
 ##Creating new data set w/ normalized column values for points
 hospital_honor_roll_2016_newc = hospital_honor_roll_2016 %>%
 ##used normalized value (b-a)*(W-c)/(d+c)+a
