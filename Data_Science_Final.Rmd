@@ -219,6 +219,7 @@ medicare_usnews %>%
   ylab("USNews score - Medicare score") +
   scale_fill_discrete(name = "")
 ```
+
 ```{r, logit}
 ##logistic modelling - binary outcome (patient experience - above and below national average)
 
@@ -234,13 +235,11 @@ hospital_data_logistic_regression[,9] <- lapply(hospital_data_logistic_regressio
 ##using glm with binomial distribution for model 
 mylogit <- glm(patient_experience_national_comparison ~ hospital_ownership + hospital_overall_rating + hospital_type, data = hospital_data_logistic_regression, family = "binomial")
 
-View(mylogit)
 
 ##revising data set to collapse government
 hospital_data_logistic_regression_comp <- hospital_data_logistic_regression %>%
 mutate(hospital_ownership = recode(hospital_ownership, "Government - Local" = "Government", "Government - State" = "Government", "Government - Hospital District or Authority" = "Government", "Government - Federal" = "Government")) 
 
-View(hospital_data_logistic_regression_comp)
 
 ##creating function to run regression model
 hospitaldata_logm = function(df){
@@ -256,7 +255,6 @@ hospital_data_lr_df =
   unnest() 
 
 hospital_data_lr_df <- hospital_data_lr_df[c(1, 2, 3, 4, 5, 6, 7, 8),]   
-View(hospital_data_lr_df)
 
 kable(hospital_data_lr_df, caption = "Model Componnents of our patient experience model") %>%
 kable_styling(bootstrap_options = c("striped", "hover"))
@@ -269,8 +267,6 @@ kable_styling(bootstrap_options = c("striped", "hover"))
   #row_spec(7:8, bold = T, color = "white", background = "#D7261E") %>%
   #row_spec(3, bold = T, color = "white", background = "#D7261E") 
 ```
-
-
 
 ```{r shiny code geographic distribution of star rankings}
 
