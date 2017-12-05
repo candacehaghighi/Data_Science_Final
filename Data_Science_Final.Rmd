@@ -2,7 +2,8 @@
 title: "Data_Science_Final"
 author: "Candace Haghighi"
 date: "11/22/2017"
-output: html_document
+output: 
+runtime: shiny
 ---
 >Quick Intro... Please make sure that when you type in your section that the code chunk does not push too far down! This will 'bleed' into the next person's section and may cause issues when merging - thank you!!
 
@@ -20,6 +21,7 @@ library(viridis)
 library(plotly)
 library(knitr)
 library(kableExtra)
+library(shiny)
 ```
 
 ```{r}
@@ -217,7 +219,6 @@ medicare_usnews %>%
   ylab("USNews score - Medicare score") +
   scale_fill_discrete(name = "")
 ```
-
 ```{r, logit}
 ##logistic modelling - binary outcome (patient experience - above and below national average)
 
@@ -262,9 +263,92 @@ kable_styling(bootstrap_options = c("striped", "hover"))
 
 ##May not be able to run with package kableExtra
 
-kable(hospital_data_lr_df, caption = "Model Componnents of our patient experience model") %>%
-  kable_styling("striped", full_width = F) %>%
-  column_spec(5, bold = T) %>%
-  row_spec(7:8, bold = T, color = "white", background = "#D7261E") %>%
-  row_spec(3, bold = T, color = "white", background = "#D7261E") 
+#kable(hospital_data_lr_df, caption = "Model Componnents of our patient experience model") %>%
+  #kable_styling("striped", full_width = F) %>%
+  #column_spec(5, bold = T) %>%
+  #row_spec(7:8, bold = T, color = "white", background = "#D7261E") %>%
+  #row_spec(3, bold = T, color = "white", background = "#D7261E") 
+```
+
+
+
+```{r shiny code geographic distribution of star rankings}
+
+hospital_data_2 <- read_csv("./data/hospital_data_2.csv")
+
+hospital_data_regions <- hospital_data_2 %>%
+  mutate(region = ifelse(grepl("ME|NH|VT|MA|RI|CT", state), "New England", ifelse(grepl("NY|PA|NJ", state), "Middle Atlantic", ifelse(grepl("WI|MI|IL|IN|OH", state), "East North Central", ifelse(grepl("ND|SD|NE|KS|MN|IA|MO", state), "West North Central", ifelse(grepl("DE|MD|DC|VA|WV|NC|SC|GA|FL", state), "South Atlantic", ifelse(grepl("KY|TN|MS|AL", state), "East South Central", ifelse(grepl("OK|TX|AR|LA", state), "West South Central", ifelse(grepl("ID|MT|WY|NV|UT|CO|AZ|NM", state), "Mountain", ifelse(grepl("AK|WA|OR|CA|HI", state), "Pacific", "U.S. Territories")))))))))) 
+
+
+star_choice <- hospital_data_regions %>% 
+  distinct(hospital_overall_rating) %>% arrange(desc(hospital_overall_rating))
+# selectInput widget
+shiny::selectInput("star_choice", label = h3("Select Star"),
+            choices = star_choice, selected = "5")
+
+regions <- hospital_data_regions %>% 
+  distinct(region) %>% pull()
+# selectInput widget
+shiny::selectInput("region_choice", label = h3("Select Region"),
+            choices = regions, selected = "New England")
+
+#map plot
+renderPlotly({ 
+  
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showland = TRUE,
+  landcolor = toRGB("gray95"),
+  subunitcolor = toRGB("gray85"),
+  countrycolor = toRGB("gray85"),
+  countrywidth = 0.5,
+  subunitwidth = 0.5
+)
+
+filter(hospital_data_regions, hospital_overall_rating == input$star_choice) %>%
+  plot_geo(lat = ~Latitudes, lon = ~Longitudes, text = ~paste(hospital_name, city, state, sep = "<br />"), marker=list(color="blue" , size=5 , opacity=0.4)) %>%
+  layout(title = 'Hospital Rankings (Hover for Hospital)', geo = g)
+})
+
+
+
+#bar plot by region
+
+renderPlotly({ 
+  hospital_data_regions %>%
+  filter(hospital_overall_rating != "Not Available") %>%
+  filter(region == input$region_choice) %>%
+  mutate(hospital_overall_rating = as.numeric(hospital_overall_rating)) %>%
+  group_by(region, state, hospital_overall_rating) %>%
+  mutate(num_hospitals = n()) %>%
+  plot_ly(x = ~hospital_overall_rating, y = ~num_hospitals,color = ~state, type = "bar") %>% 
+  layout(title = "Number of hospitals per hospital rating, by state", margin = list(b = 75)) 
+})
+
+```
+
+
+Other plotly code:
+
+```{r}
+box_ggplot_owner =
+hospital_data_2 %>% 
+  filter(hospital_ownership != "Tribal") %>%
+  mutate(hospital_ownership = as.factor(hospital_ownership)) %>%
+  mutate(hospital_overall_rating =  as.character(hospital_overall_rating)) %>%
+  group_by(hospital_ownership) %>%
+  count(hospital_overall_rating) %>%
+  spread(key=hospital_overall_rating, value=n) 
+
+box_ggplot_owner[is.na(box_ggplot_owner)] <- 0
+
+box_ggplot_owner %>%
+  plot_ly(x = ~hospital_ownership, y = ~ `1`, type = 'bar', name = 'Rating 1') %>%
+  add_trace(y = ~ `2`, name = 'Rating 2') %>%
+  add_trace(y = ~ `3`, name = 'Rating 3') %>%
+  add_trace(y = ~ `4`, name = 'Rating 4') %>%
+  add_trace(y = ~ `5`, name = 'Rating 5') %>%
+  layout(yaxis = list(title = 'Count'), barmode = 'stack') %>%
+  layout(title ="Count of Hospitals by Different Ownership and Rating" ,margin = list(b = 180), xaxis=list(title = "Hospital Ownership",tickangle = 30))
 ```
