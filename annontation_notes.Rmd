@@ -53,7 +53,7 @@ Every year, US News & World Reports ranks US hospitals across 16 different medic
 In order to be able to make comparisons to the US News and World Reports hospital rankings, we needed to scrape this data from the webpage where this information is listed. Because we wanted the rankings plus information about the US News and World Reports points/scoring criteria, we had to do a bit of searching to get the right data for the 2016-2017 ranking cycle. After first looking [here](https://www.usnews.com/info/blogs/press-room/articles/2016-08-02/us-news-announces-the-201617-best-hospitals) (which had rankings, but no points), and [here](https://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview) (which had rankings and points, but was for 2017-2018), we realized we could use [web.archive.org](web.archive.org) to find the archived 2016-2017 rankings page with points, which we found [here](https://web.archive.org/web/20160816171510/http://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview). 
 Because we considered comparing the Medicare rankings to both the 2016-2017 and 2017-2018 rankings (and the webpages for these were in the same format), we wrote a function to scrape the US News & World Reports data. We converted the `points` variable from a factor to a numeric value. 
 
-***EXPLANATION OF score normalization and comparison. 
+***EXPLANATION OF score normalization and comparison--Candace
 
 
 #Exploratory analysis:
@@ -66,5 +66,17 @@ Additionally, after reading some articles about controversial Medicare rankings 
 
 
 #Discussion:
-NEED MORE INFO HERE
 
+*Geographic distribution of hospitals with 1-5 star rankings:*
+
+To evaluate whether there were any interesting trends in the geographic distribution of hospitals with 1-5 star rankings, we created two different shiny plots. First, we created a new variable that assigned each hospital to its corresponding geographic region, which were  created based on the [Census regional divisions](https://web.archive.org/web/20130921053705/http://www.census.gov/geo/maps-data/maps/pdfs/reference/us_regdiv.pdf), which was then used as an input widget for a shiny graph showing the number of hospitals with each ranking by state within the geographic region. This plot shows that across all regions, in general the majority of Medicare hospitals have a 3-star rating. Additionally, it shows within some regions, particular states have many more Medicare-funded hospitals than others; for example in the West South Central region, Texas has the highest number of hospitals compared to the rest of the states in the region. 
+
+In order to get a better understanding of this data, we decided to visually represent it by plotting a map of the location of each hospital, using star ranking as the shiny input widget. This map reveals several interesting trends. One of the criticisms of the Medicare ranking system (by hospital owners/advocates) was that there were more 5 star rankings given to "relatively obscure" hospitals and hospitals in more "obscure" parts of the country than to well-known major hospitals. This map seems to support this claim--there are two 5-star hospitals in Nebraska, and two 5-star hospitals in South Dakota, yet only one each in New York and Massachusetts. Additionally, this plot demonstrates that the majority of hospitals received 3-star rankings. Furthermore, the 3-star hospital rankings plot shows that there is a greater density of Medicare-funded hospitals in the Eastern half of the United States than the Western half.  
+
+*Plotly stacked bar chart plot:*
+
+Claire
+
+*Hospital Ranking scores plot:*
+
+Nick
