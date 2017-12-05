@@ -22,6 +22,8 @@ library(plotly)
 library(knitr)
 library(kableExtra)
 library(shiny)
+library(rvest)
+library(httr)
 ```
 
 ```{r}
@@ -177,7 +179,7 @@ ny_hospitals <- ny_hospitalranks_html %>% html_nodes(".search-result-link") %>% 
 ##Creating new data set w/ normalized column values for points
 hospital_honor_roll_2016_newc = hospital_honor_roll_2016 %>%
 ##used normalized value (b-a)*(W-c)/(d+c)+a
-mutate(new_score = (4 * points/480 + 1)) 
+mutate(new_score = (4 * points/448 + 1)) 
 
 ##Create vector
 provider_id = c("240010", "360180", "220071", "210009", "050376", "330101", "050454", "140281", "390223", "330214", "260032", "390164", "220110", "050441", "330024", "340030", "050625", "230046", "450358", "060024")
@@ -234,13 +236,13 @@ hospital_data_logistic_regression[,9] <- lapply(hospital_data_logistic_regressio
 ##using glm with binomial distribution for model 
 mylogit <- glm(patient_experience_national_comparison ~ hospital_ownership + hospital_overall_rating + hospital_type, data = hospital_data_logistic_regression, family = "binomial")
 
-View(mylogit)
+
 
 ##revising data set to collapse government
 hospital_data_logistic_regression_comp <- hospital_data_logistic_regression %>%
 mutate(hospital_ownership = recode(hospital_ownership, "Government - Local" = "Government", "Government - State" = "Government", "Government - Hospital District or Authority" = "Government", "Government - Federal" = "Government")) 
 
-View(hospital_data_logistic_regression_comp)
+
 
 ##creating function to run regression model
 hospitaldata_logm = function(df){
@@ -256,7 +258,7 @@ hospital_data_lr_df =
   unnest() 
 
 hospital_data_lr_df <- hospital_data_lr_df[c(1, 2, 3, 4, 5, 6, 7, 8),]   
-View(hospital_data_lr_df)
+
 
 kable(hospital_data_lr_df, caption = "Model Componnents of our patient experience model") %>%
 kable_styling(bootstrap_options = c("striped", "hover"))
