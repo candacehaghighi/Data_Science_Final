@@ -1,14 +1,89 @@
 ---
-title: "Data_Science_Final"
-author: "Candace Haghighi"
-date: "11/22/2017"
+title: "Data Science I, Final Project"
+author: "Candace Haghighi, Carolina Downie, Claire (Huilan) Tang, Nick Pantaleo"
+date: "Due 12/6/2017"
 output: 
 runtime: shiny
 ---
->Quick Intro... Please make sure that when you type in your section that the code chunk does not push too far down! This will 'bleed' into the next person's section and may cause issues when merging - thank you!!
+
+Code begins at line 87. [Link to repository one](https://github.com/candacehaghighi/Data_Science_Final/), [link to repository for flexdashboard](https://github.com/carolinadownie/p8105_finalproject_shiny).
+
+#Motivation and Questions 
+
+When our group was brainstorming what our final Data Science project would be, we started by looking for large public health-related datasets that were available on the web. We quickly found data about hospital rankings and comparisons from [Medicare](https://data.medicare.gov/data/hospital-compare), and decided it would be interesting to analyze the hospital rankings based on factors like geography, type of hospital ownership, and some of the criteria used to create the rankings. 
+Upon doing some further reading, we learned that the roll-out of these Medicare Hospital Compare rankings in July 2016 was [controversial](https://www.usnews.com/news/articles/2016-07-27/medicare-releases-controversial-hospital-star-ratings). Many hospitals criticized the rankings, claiming that these scores were not accurate. Furthermore, there were complaints that major hospitals that consistently score highly in US News & World Reports rankings and other commercial rankings did not score highly on the [Medicare rankings](https://www.npr.org/sections/health-shots/2016/07/27/487633215/many-well-known-hospitals-fail-to-score-high-in-medicare-rankings), and instead relatively obscure hospitals received the highest rating (a rating of 5 stars). 
+Given this information, we decided to analyze the Medicare data to assess these claims. 
+Questions that drove our analysis were:
+
+* What was the geographic distribution of ratings? Did areas of the country that are known for having well-known hospital systems (eg NYC, Boston) have a lot of high Medicare scores? In what areas of the country were there hospitals with the lowest scores? 
+
+* How did the distribution of ratings vary by hospital ownership type? 
+
+* Were there important differences in the Top 20 Hospitals in 2016-2017 as ranked by [US News and World Reports](https://web.archive.org/web/20160816171510/http://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview) and the corresponding 2016 Medicare scores for these hospitals (i.e. were the hospitals' complaints justified)? 
+
+* Can we make a logistic model for patient satisfaction score based on other known hospital ranking criteria? 
+
+#Data
+
+**Medicare Hospital Data**
+
+*About the dataset*
+
+The main dataset that we chose to analyze was the [Hospital General Information](https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/data) dataset, which is published by the Centers for Medicare & Medicaid Services and contains information about all hospitals in the United States (and U.S. Territories) that have been registered with Medicare. According to the Medicare [website](https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/about), this dataset was created in May 2014 and was last updated in October 2017. We downloaded the dataset as a csv file from [Data.Medicare.gov](https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u/data) by clicking on the "Export" tab and selecting the CSV option from the Download section, which allowed us to download a copy of the dataset in a static format. 
+
+[Hospital Compare](https://www.cms.gov/medicare/quality-initiatives-patient-assessment-instruments/hospitalqualityinits/hospitalcompare.html) is a program that was created in 2002 to provides "information on how well hospitals provide recommended care to their patients," based on a variety of measures including patient experiences, readmissions & death rates, payment & value of care. In 2016, "Overall Hospital Quality Star Rating" was added to the Hospital Compare metrics. More information about hospital ratings methodology can be found [here](https://www.qualitynet.org/dcs/ContentServer?c=Page&pagename=QnetPublic%2FPage%2FQnetTier3&cid=1228775957165) and [here](http://www.hcahpsonline.org/Files/October_2017_Star%20Ratings_Tech%20Notes.pdf). 
 
 
-```{r, Claire section (line 10-110; used for bringing in, cleaning, merging, etc. data)}
+*Data cleaning*
+
+In order to make a plot of the geographic distribution of hospital rankings, we needed to have the latitude and longitude of the hospitals; this information was provided in the "Location" variable, but as a coordinate pair, and with the accompanying address. To deal with this, we applied the `separate` function twice, first to separate `coordinates` and `address`, and then to separate `coordinates` into `latitude` and `longitude`. 
+
+However, when we looked through the resulting dataset, we noticed that there were quite a few hospitals that didn't have latitude and longitude coordinates, which would prohibit us from being able to plot them on a map. To address this, we applied the `geocode` function from the `ggmap` package to the dataset, which takes an input address and outputs the corresponding 
+latitude and longitude. 
+
+We first applied `ggmap::geocode` using the `address` variable to look up coordinates; however after running this, we still had several hospitals for which it wasn't able to find coordinates. So we then did the same thing, but used `hospital_name` as the input address information to try to find the coordinates for the hospitals that we had missed using `address`. After applying this process, there were only 4 hospitals for which we could not find corresponding geographical coordinates; since none of these were major, well-known hospitals, we removed them from the dataset. We then joined this dataset to our initial hospital dataset to replace the missing latitude and longitude values. We saved this updated dataset, which contained geographic coordinates for all of the hospitals as a csv file called `hospital_data_2` and used this dataset for all of our subsequent analyses.  
+
+
+**US News and World Reports Dataset**
+
+*About the dataset*
+
+Every year, US News & World Reports ranks US hospitals across 16 different medical specialities based on a variety of measures, including survival, patient safety, and care-related indicators. The Best Hospitals Honor Roll is a list of the top 20 hospitals that had the highest ratings across all 16 Best Hospital specialties, nine procedures, and condition ratings. Total points for hospitals on the Best Hospital Honor Roll list are out of a maximum of 448. More information about the US News & World Reports methodology for the 2016-2017 rankings can be found [here](http://web.archive.org/web/20160910084826/http://static.usnews.com:80/documents/health/best-hospitals/BH_Methodology_2016-17.pdf).   
+
+*Data scraping and cleaning*
+
+In order to be able to make comparisons to the US News and World Reports hospital rankings, we needed to scrape this data from the webpage where this information is listed. Because we wanted the rankings plus information about the US News and World Reports points/scoring criteria, we had to do a bit of searching to get the right data for the 2016-2017 ranking cycle. After first looking [here](https://www.usnews.com/info/blogs/press-room/articles/2016-08-02/us-news-announces-the-201617-best-hospitals) (which had rankings, but no points), and [here](https://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview) (which had rankings and points, but was for 2017-2018), we realized we could use [web.archive.org](web.archive.org) to find the archived 2016-2017 rankings page with points, which we found [here](https://web.archive.org/web/20160816171510/http://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview). 
+Because we considered comparing the Medicare rankings to both the 2016-2017 and 2017-2018 rankings (and the webpages for these were in the same format), we wrote a function to scrape the US News & World Reports data. We converted the `points` variable from a factor to a numeric value. 
+
+Explanation of data normalization and comparison: Converted US News and World Reports hospital points system (range: 0 - 448) to a fit the range 1 - 5 in order to directly compare the US News and World Reports hospital point system to the Medicare score rankings. We used the range normalization formula $(b-a)*(W-c)/(d+c)+a$ where W = points, b = 5, a = 1, c = 0 and d = 448. This was done to normalize the range of points in the US News and World Report to the existing 2016 Medicare data for easy comparison between the two scores. The formula used is typical ranging and is usually done by coercing the outcome into [0,1] range. This may be also generalized to follow the range of other arbitrary values using a and b: $X' = a + \frac{(x - x_{min})(b - a)}{(x_{max} - x_{min})}$.
+
+#Exploratory analysis
+
+We started our exploratory analysis by visualizing relationships of interest. This included hospital rating based on ownership (boxplot), hospital rating based on hospital type (boxplot), hospital rating distribution (barplot), and hospital rating vs. Patient Experience Level (Scatter plot). After this preliminary analysis, we recognized that these graphs were not particularly useful in visualizations for describing our data, however the preliminary analysis emphasized our interest to further explore patient experience through basic logistic regression. 
+
+Additionally, after reading some articles about controversial Medicare rankings we decided to compare US Scores and rankings to the Medicare rankings to see if there are any major discrepancies in scores. We were also interested in looking how the score of a hospital changed by region and ownership (Houston and UCLA showed major discrepancies between the two rating mechanisms). Our final logistic regression model looked at patient experience as the outcome and ownership (5 categories with government as the reference category), type (binary - critical care access available or not) and overall score (continous: scale from 1-5) as predictors.
+
+#Discussion
+
+*Geographic distribution of hospitals with 1-5 star rankings:*
+
+To evaluate whether there were any interesting trends in the geographic distribution of hospitals with 1-5 star rankings, we created two different shiny plots. First, we created a new variable that assigned each hospital to its corresponding geographic region, which were  created based on the [Census regional divisions](https://web.archive.org/web/20130921053705/http://www.census.gov/geo/maps-data/maps/pdfs/reference/us_regdiv.pdf). This region variable was then used as an input widget for a shiny graph showing the number of hospitals with each ranking by state within the geographic region. This plot shows that across all regions, the majority of Medicare hospitals have a 3-star rating. Additionally, it shows that within some regions, particular states have many more Medicare-funded hospitals than others; for example in the West South Central region, Texas has the highest number of hospitals compared to the rest of the states in the region. 
+
+In order to get a better understanding of this data, we decided to visually represent it by plotting a map of the location of each hospital, using star ranking as the shiny input widget. This map reveals several interesting trends. One of the criticisms of the Medicare ranking system (by hospital owners/advocates) was that there were more 5 star rankings given to "relatively obscure" hospitals and hospitals in more "obscure" parts of the country than to well-known major hospitals. This map seems to support this claim--there are two 5-star hospitals in Nebraska, and two 5-star hospitals in South Dakota, yet only one each in New York and Massachusetts. Additionally, there seem to be some general geographic trends regarding star-ranking and hospital location. For example, Florida, the New York/New Jersey area, and parts of California appear to have the highest density of 2-star hospitals. More broadly, there appears to be more hospitals of all rankings in the Eastern half of the United States compared to the Western half, but this is particularly apparent when viewing the locations of 3-star hospitals.
+
+*Plotly stacked bar chart plot:*
+
+We explored the relationship between the hospital rating and the hospital ownership. The number of Government-Federal, Government-State, and Physician-owned hospitals are limited, so our analysis focused on the other six types of ownership. From our results, hospitals rated 3 stars are most common, while hospitals with 1 and 5 stars are the least common across all kinds of ownership. The hospitals that were private non-profit have the greatest number of 4 or 5 star ratings among all ownership types, and they also have the greatest number of one star-rated hospitals. Hospitals owned by local governments have the largest numbers of 4 or 5 star hospitals, and hospitals owned by churches have the fewest one star hospitals. Church-owned hospitals have the largest proportion of 4 or 5 star hospitals; local government-owned hospitals have the largest percentage of 1 star hospitals. Local government-held hospitals have the lowest proportion of 5 star hospitals, proprietary-owned hospitals have the lowest proportion of 4 star-rated hospitals, and church-owned hospitals have the lowest percentage of 1 star hospitals.
+
+*Hospital Ranking scores plot:*
+
+In order to investigate the similarity between Medicare and US News ratings, we compared the standardized ratings given by each organziation among the twenty hospitals evaluated by US News and World Report. By subtracting the Medicare rating from the US News rating, we were able to use a vertical bar graph to show which hospitals were favored by which rating agency. What we observed was a relatively even distribution between hospitals that were rated more highly by US News and hospitals favored by Medicare, which is what we would expect under the assumption that neither organization has a systematic bias in their rankings. We did notice, however, that each organization rated one hospital much differently from the other - US News gave UCLA Medical Center about 2 more stars than Medicare did, and Medicare favored Houston Methodist Hospital by about the same margin. Excluding these two, standardized ratings for all other hospitals were almost entirely within +/- 1 star. These results should be not be considered conlcusive, however, given the small sample size of the US News-ranked hospitals.
+
+*Logistic Model:*
+
+Our final logistic regression model looked at patient experience as the outcome and ownership (categorical), hospital type (binary), and overall rating (continuous) as predictors. We were interested to see how these factors influenced patient experience. Predictors which significantly affected patient experience were overall rating (continuous), hospital type (binary), and Proprietary ownership of the hospital ownership (categorical). We initially used all categories of all variables in our model but with the low overall count of hospitals owned by the government-state, government-local, government-Hospital District or Authority, and government-federal we decided to collapse the dummy variables for government into one governmental categorical variable. The reference variable for the hospital_type variable is acute care hospitals (0). The reference category for the hospital_ownership variable is hospital_ownership_government, and the various dummies include hospital_ownership_Proprietary, hospital_ownership_voluntarynon-profitchurch, hospital_ownership_voluntarynon-profitother, hospital_ownership_voluntarynon-profitprivate. We used the entire dataset to develop this model and also reduced the size of our dataset by creating a binary outcome variable, which may make this model less robust/reproducible.
+
+```{r, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readxl)
@@ -26,7 +101,7 @@ library(rvest)
 library(httr)
 ```
 
-```{r}
+```{r, message = FALSE}
 # cleaning the data
 hospital_data = read_csv(file = "./data/Hospital_General_Information.csv", col_names = TRUE) %>% 
   clean_names() %>%
@@ -88,12 +163,19 @@ hospital_data_2 %>%
 ggplot(aes(x = hospital_type, y = hospital_overall_rating, group = hospital_type)) + geom_boxplot(aes(color = hospital_type)) + labs(title = "Distribution of Hospital Rating Based on Hospital Type", x = "Hospital Type", y = "Hospital Rating") + theme_classic() + theme(axis.text.x = element_text(hjust = 1), plot.title = element_text(hjust = 0.5))
 box_ggplot_type
 
+
+
 # hospital rating based on ownership (boxplot)
 box_ggplot_owner =
 hospital_data_2 %>% 
    mutate(hospital_ownership = fct_reorder(hospital_ownership, hospital_overall_rating)) %>%
-ggplot(aes(x = hospital_ownership, y = hospital_overall_rating, group = hospital_ownership)) + geom_boxplot(aes(color = hospital_ownership)) + labs(title = "Distribution of Hospital Rating Based on Hospital Ownership", x = "Hospital Ownership", y = "Hospital Rating") + theme_classic() + theme(axis.text.x = element_text(angle = 120, hjust = 1)) + theme(axis.text.x = element_text(hjust = 1), plot.title = element_text(hjust = 0.5))
+ggplot(aes(x = hospital_ownership, y = hospital_overall_rating, group = hospital_ownership)) + geom_boxplot(aes(color = hospital_ownership)) + labs(title = "Distribution of Hospital Rating Based on Hospital Ownership", x = "Hospital Ownership", y = "Hospital Rating") + theme_classic() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + theme(axis.text.x = element_text(hjust = 1), plot.title = element_text(hjust = 0.5)) +
+  theme(legend.position = "none")
 ggplotly(box_ggplot_owner)
+
+
+
+
 
 # hospital rating distribution (barplot)
 hospital_data_2 %>% 
@@ -107,6 +189,8 @@ hospital_data_2 %>%
     layout(yaxis = list(title = 'Total number of Hospitals')) %>%
     layout(xaxis = list(title = 'Hospital Rating'))
 
+
+
 # hospital rating and Patient Experience Level (Scatter plot)
 scatter_patient = hospital_data_2 %>%
   filter(!(patient_experience_national_comparison == "Not Available")) %>%
@@ -114,18 +198,14 @@ scatter_patient = hospital_data_2 %>%
   geom_point(alpha = 0.25) +
   scale_color_viridis() +
   coord_cartesian() + labs(title = "Hospital Rating and Patient Experience level", x = "Patient Experience Level", y = "Hospital Rating") +
-  theme_classic()
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1),
+        legend.position = "none")
+
 ggplotly(scatter_patient)
 ```
 
-##Any additional plots and changes 
-
 ```{r, Carolina section 230 - 330 }
-
-library(rvest)
-library(httr)
-
-
 hospitalranks_html <- read_html("https://www.usnews.com/info/blogs/press-room/articles/2016-08-02/us-news-announces-the-201617-best-hospitals")
 
 hospitals <- hospitalranks_html %>% html_nodes(".ad-in-text-target+ .ad-in-text-target h2 , .ad-in-text-target:nth-child(5) li") %>% html_text() %>% data.frame() %>% rename(hospitals = ".") %>% filter(hospitals != "2016–17 Best Hospitals Honor Roll")
@@ -167,7 +247,7 @@ hospital_honor_roll_2017 <- honor_roll_scrape("https://health.usnews.com/health-
 ```
 
 ```{r}
-#Hospital rankings by region--New York region. This first part works. 
+#Hospital rankings by region--New York region.
 
 ny_hospitalranks_html <- read_html("https://health.usnews.com/best-hospitals/area/new-york-ny")
 
@@ -221,6 +301,7 @@ medicare_usnews %>%
   ylab("USNews score - Medicare score") +
   scale_fill_discrete(name = "")
 ```
+
 ```{r, logit}
 ##logistic modelling - binary outcome (patient experience - above and below national average)
 
@@ -234,7 +315,7 @@ mutate(patient_experience_national_comparison = recode(patient_experience_nation
 hospital_data_logistic_regression[,9] <- lapply(hospital_data_logistic_regression[,9], as.numeric)
 
 ##using glm with binomial distribution for model 
-mylogit <- glm(patient_experience_national_comparison ~ hospital_ownership + hospital_overall_rating + hospital_type, data = hospital_data_logistic_regression, family = "binomial")
+mylogit <- glm(patient_experience_national_comparison ~ hospital_ownership + hospital_overall_rating + hospital_type, data = hospital_data_logistic_regression, family = "binomial"(link = "logit"))
 
 
 
@@ -246,7 +327,7 @@ mutate(hospital_ownership = recode(hospital_ownership, "Government - Local" = "G
 
 ##creating function to run regression model
 hospitaldata_logm = function(df){
-glm(patient_experience_national_comparison ~ hospital_ownership + hospital_overall_rating + hospital_type, data = hospital_data_logistic_regression_comp, family = "binomial")
+glm(patient_experience_national_comparison ~ hospital_ownership + hospital_overall_rating + hospital_type, data = hospital_data_logistic_regression_comp, family = "binomial"(link = "logit"))
 }
 
 hospital_data_lr_df = 
@@ -260,7 +341,7 @@ hospital_data_lr_df =
 hospital_data_lr_df <- hospital_data_lr_df[c(1, 2, 3, 4, 5, 6, 7, 8),]   
 
 
-kable(hospital_data_lr_df, caption = "Model Componnents of our patient experience model") %>%
+kable(hospital_data_lr_df, caption = "Model Components of our patient experience model") %>%
 kable_styling(bootstrap_options = c("striped", "hover"))
 
 ##May not be able to run with package kableExtra
@@ -275,9 +356,6 @@ kable_styling(bootstrap_options = c("striped", "hover"))
 
 
 ```{r shiny code geographic distribution of star rankings}
-
-hospital_data_2 <- read_csv("./data/hospital_data_2.csv")
-
 hospital_data_regions <- hospital_data_2 %>%
   mutate(region = ifelse(grepl("ME|NH|VT|MA|RI|CT", state), "New England", ifelse(grepl("NY|PA|NJ", state), "Middle Atlantic", ifelse(grepl("WI|MI|IL|IN|OH", state), "East North Central", ifelse(grepl("ND|SD|NE|KS|MN|IA|MO", state), "West North Central", ifelse(grepl("DE|MD|DC|VA|WV|NC|SC|GA|FL", state), "South Atlantic", ifelse(grepl("KY|TN|MS|AL", state), "East South Central", ifelse(grepl("OK|TX|AR|LA", state), "West South Central", ifelse(grepl("ID|MT|WY|NV|UT|CO|AZ|NM", state), "Mountain", ifelse(grepl("AK|WA|OR|CA|HI", state), "Pacific", "U.S. Territories")))))))))) 
 
@@ -287,12 +365,6 @@ star_choice <- hospital_data_regions %>%
 # selectInput widget
 shiny::selectInput("star_choice", label = h3("Select Star"),
             choices = star_choice, selected = "5")
-
-regions <- hospital_data_regions %>% 
-  distinct(region) %>% pull()
-# selectInput widget
-shiny::selectInput("region_choice", label = h3("Select Region"),
-            choices = regions, selected = "New England")
 
 #map plot
 renderPlotly({ 
@@ -313,7 +385,11 @@ filter(hospital_data_regions, hospital_overall_rating == input$star_choice) %>%
   layout(title = 'Hospital Rankings (Hover for Hospital)', geo = g)
 })
 
-
+regions <- hospital_data_regions %>% 
+  distinct(region) %>% pull()
+# selectInput widget
+shiny::selectInput("region_choice", label = h3("Select Region"),
+            choices = regions, selected = "New England")
 
 #bar plot by region
 
@@ -330,8 +406,6 @@ renderPlotly({
 
 ```
 
-
-Other plotly code:
 
 ```{r}
 box_ggplot_owner =
@@ -352,5 +426,5 @@ box_ggplot_owner %>%
   add_trace(y = ~ `4`, name = 'Rating 4') %>%
   add_trace(y = ~ `5`, name = 'Rating 5') %>%
   layout(yaxis = list(title = 'Count'), barmode = 'stack') %>%
-  layout(title ="Count of Hospitals by Different Ownership and Rating" ,margin = list(b = 180), xaxis=list(title = "Hospital Ownership",tickangle = 30))
+  layout(title = "Count of Hospitals by Different Ownership and Rating" ,margin = list(b = 180), xaxis = list(title = "Hospital Ownership", tickangle = 30))
 ```
