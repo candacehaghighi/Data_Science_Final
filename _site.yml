@@ -4,9 +4,13 @@ navbar:
   title: "Home"
   right:
     - text: "Shiny Dashboard"
+      href: https://carolinadownie.shinyapps.io/p8105_finalproject_shiny/
+    - text: "Flex Dashboard"
       href: https://github.com
-    - text: "Final repository"
+    - text: "Final data repository"
       href: https://github.com/candacehaghighi/Data_Science_Final/
+    - text: "Final shiny repository"
+      href: https://github.com/carolinadownie/p8105_finalproject_shiny
     - icon: fa-github fa-lg
       href: https://github.com/
 output:
