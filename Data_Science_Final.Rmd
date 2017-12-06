@@ -83,7 +83,7 @@ In order to investigate the similarity between Medicare and US News ratings, we 
 
 Our final logistic regression model looked at patient experience as the outcome and ownership (categorical), hospital type (binary), and overall rating (continuous) as predictors. We were interested to see how these factors influenced patient experience. Predictors which significantly affected patient experience were overall rating (continuous), hospital type (binary), and Proprietary ownership of the hospital ownership (categorical). We initially used all categories of all variables in our model but with the low overall count of hospitals owned by the government-state, government-local, government-Hospital District or Authority, and government-federal we decided to collapse the dummy variables for government into one governmental categorical variable. The reference variable for the hospital_type variable is acute care hospitals (0). The reference category for the hospital_ownership variable is hospital_ownership_government, and the various dummies include hospital_ownership_Proprietary, hospital_ownership_voluntarynon-profitchurch, hospital_ownership_voluntarynon-profitother, hospital_ownership_voluntarynon-profitprivate. We used the entire dataset to develop this model and also reduced the size of our dataset by creating a binary outcome variable, which may make this model less robust/reproducible.
 
-```{r, Claire section (line 10-110; used for bringing in, cleaning, merging, etc. data)}
+```{r, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readxl)
@@ -101,7 +101,7 @@ library(rvest)
 library(httr)
 ```
 
-```{r}
+```{r, message = FALSE}
 # cleaning the data
 hospital_data = read_csv(file = "./data/Hospital_General_Information.csv", col_names = TRUE) %>% 
   clean_names() %>%
@@ -407,8 +407,6 @@ renderPlotly({
 ```
 
 
-Other plotly code:
-
 ```{r}
 box_ggplot_owner =
 hospital_data_2 %>% 
@@ -428,5 +426,5 @@ box_ggplot_owner %>%
   add_trace(y = ~ `4`, name = 'Rating 4') %>%
   add_trace(y = ~ `5`, name = 'Rating 5') %>%
   layout(yaxis = list(title = 'Count'), barmode = 'stack') %>%
-  layout(title ="Count of Hospitals by Different Ownership and Rating" ,margin = list(b = 180), xaxis = list(title = "Hospital Ownership",tickangle = 30))
+  layout(title = "Count of Hospitals by Different Ownership and Rating" ,margin = list(b = 180), xaxis = list(title = "Hospital Ownership", tickangle = 30))
 ```
