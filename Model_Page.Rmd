@@ -11,7 +11,7 @@ The logistic regression model generated below looks at patient experience as an 
 
 * Hopsital ownership was defined by five categores: Proprietary, Physician, Voluntary non-profit Church, Voluntary non-Profit Private, Voluntary non-Profit Other, and Government. The reference variable is Government.
 
-** The government category was originally defined as government-state ownership, government-local ownership, government-Hospital District ownership or Authority, and government-federal. We collapsed the 4 dummy variables for government into one government dummy variable (within hospital ownership). 
+* The government category was originally defined as government-state ownership, government-local ownership, government-Hospital District ownership or Authority, and government-federal. We collapsed the 4 dummy variables for government into one government dummy variable (within hospital ownership). 
 
 * The reference variable for the hospital type variable is Acute Care Hospitals. 
 
@@ -19,11 +19,14 @@ The logistic regression model generated below looks at patient experience as an 
 
 ##Final Model
 
+$logit(patient experience) = -7.40 + -0.96X(hospitalownership-Physician)$ +
+$-1.38X(hospitalownership-Proprietary) + 0.02X(hospitalownership-Voluntary-non-profit-Church) +$
+$-0.02X(hospitalownership-Voluntary-non-profit-Other) +$
+$-0.16X(hospitalownership-Voluntary-non-profit-Private)$ +
+$2.46X(hospital-overall-rating) + 2.13X(hospital-type-CriticalAccessHospitals)$
 
-$logit(patient experience) = -7.40 + -0.96X(hospitalownership-Physician) + -1.38X(hospitalownership-Propietry) + 0.02X(hospitalownership-Voluntary-non-profit-Church) + -0.02X(hospitalownership-Voluntary-non-profit-Other) + -0.16X(hospitalownership-Voluntary-non-profit-Private) + 2.46X(hospital_overall_rating) + 2.13X(hospital_type_CriticalAccessHospitals)$
 
-
-```{r, echo = FALSE, message=F}
+```{r, echo = FALSE, message = F, warning = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readxl)
@@ -89,12 +92,6 @@ hospital_data_lr_df <- hospital_data_lr_df[c(1, 2, 3, 4, 5, 6, 7, 8),]
 library(kableExtra)
 library(pander)
 options(knitr.table.format = "html") 
-
-kable(hospital_data_lr_df, caption = "Model Components of our patient experience model") %>%
-
-kable_styling(bootstrap_options = c("striped", "hover"))
-
-##May not be able to run with package kableExtra
 
 kable(hospital_data_lr_df, caption = "Model Components of our patient experience model") %>%
 

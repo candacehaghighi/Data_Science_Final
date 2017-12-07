@@ -4,15 +4,37 @@
 ![](http://www.columbia.edu/~sw2206/cu_mailman_logo.png)  
 
   
-# **Medicare Hospital Inspections | DSI | Final Project**
+  
+  
+# **Analyzing Medicare Hospital Star Rankings (?) | DSI | Final Project**
 
 
 ### `Huilan Tang | Candace Haghighi | Nicholas Pantaleo | Carolina Downie`
 
 
 ***
+In July 2016, the Centers for Medicare and Medicaid's "Hospital Compare" program (a consumer-oriented website that gives information about how well hospitals provide care to their patients) rolled out a new Overall Hospital Quality Star Rating, which rated hospitals between 1 and 5 stars based on a variety of measures. This roll out was  [controversial](https://www.usnews.com/news/articles/2016-07-27/medicare-releases-controversial-hospital-star-ratings), with many hospitals criticizing the rankings. One major complaint was that  major hospitals that consistently score highly in US News & World Reports rankings and other commercial rankings did not score highly on the [Medicare rankings](https://www.npr.org/sections/health-shots/2016/07/27/487633215/many-well-known-hospitals-fail-to-score-high-in-medicare-rankings), and instead relatively obscure hospitals received the highest rating (a rating of 5 stars). 
 
-> Introduction
+For our final Data Science project, we decided to analyze the Medicare data to try to assess some of these claims. Questions we were interested in included:
+
+* What was the geographic distribution of ratings? Did areas of the country that are known for having well-known hospital systems (eg NYC, Boston) have a lot of high Medicare scores? In what areas of the country were there hospitals with the lowest scores? 
+
+The plots that address these questions can be found [here](https://carolinadownie.shinyapps.io/p8105_finalproject_shiny/). 
+
+* How did the distribution of ratings vary by hospital ownership type? 
+
+* Were there important differences in the Top 20 Hospitals in 2016-2017 as ranked by [US News and World Reports](https://web.archive.org/web/20160816171510/http://health.usnews.com/health-care/best-hospitals/articles/best-hospitals-honor-roll-and-overview) and the corresponding 2016 Medicare scores for these hospitals (i.e. were the hospitals' complaints justified)? 
+
+The plots that adress these questions can be found [here](Hospital_flexdashboard.html). 
+
+* Can we make a logistic model for patient satisfaction score based on other known hospital ranking criteria? 
+
+The preliminary model we created can be found [here](Model_Page.html). 
+
+
+Conclusions and Future Directions:
+
+MORE HERE. 
 
 ***
 
