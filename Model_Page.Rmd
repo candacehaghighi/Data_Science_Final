@@ -1,21 +1,29 @@
 ---
-title: "Estimating patient experience score using logistic regression "
+title: "Estimating Patient Experience Score"
 author: ""
 date: ""
 output: html_document
 ---
 
-#Estimating patient experience score using logistic regression 
+##Logistic Regression Model with Binary Outcome
 
-*Logistic Model*
+The logistic regression model generated below looks at patient experience as an outcome of hospital ownership, hospital type, and overall rating as explained by the [Medicare Hospital General Information dataset](https://data.medicare.gov). Our preliminary model shows hospital overall rating and hospital type as signficant (p<0.05) predictors of patient experience score. 
 
-The logistic regression model generated below looked at patient experience as an outcome of hospital ownership, hospital type, and overall rating as explained by the Medicare Hospital General Information. We were interested to see how these factors influenced patient experience. Predictors which significantly affected patient experience were overall rating (continuous), hospital type (binary), and Proprietary ownership of the hospital ownership (categorical). We initially used all categories of all variables in our model but with the low overall count of hospitals owned by the government-state, government-local, government-Hospital District or Authority, and government-federal we decided to collapse the dummy variables for government into one governmental categorical variable. The reference variable for the hospital_type variable is acute care hospitals (0). The reference category for the hospital_ownership variable is hospital_ownership_government, and the various dummies include hospital_ownership_Proprietary, hospital_ownership_voluntarynon-profitchurch, hospital_ownership_voluntarynon-profitother, hospital_ownership_voluntarynon-profitprivate. We used the entire dataset to develop this model and also reduced the size of our dataset by creating a binary outcome variable, which may make this model less robust/reproducible.
+* Hopsital ownership was defined by five categores: Proprietary, Physician, Voluntary non-profit Church, Voluntary non-Profit Private, Voluntary non-Profit Other, and Government. The reference variable is Government.
+
+** The government category was originally defined as government-state ownership, government-local ownership, government-Hospital District ownership or Authority, and government-federal. We collapsed the 4 dummy variables for government into one government dummy variable (within hospital ownership). 
+
+* The reference variable for the hospital type variable is Acute Care Hospitals. 
+
+* The entire dataset (hospital count = 2151) was used develop this model.
+
+##Final Model
 
 $logit(patient experience) = -7.40 + -0.96X(hospitalownership-Physician) + -1.38X(hospitalownership-Propietry)
 + 0.02X(hospitalownership-Voluntary-non-profit-Church) + -0.02X(hospitalownership-Voluntary-non-profit-Other)
 + -0.16X(hospitalownership-Voluntary-non-profit-Private) + 2.46X(hospitaloverallrating) + 2.13X(hospitaltypeCriticalAccessHospitals)$
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message=F}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readxl)
@@ -77,7 +85,7 @@ hospital_data_lr_df =
 hospital_data_lr_df <- hospital_data_lr_df[c(1, 2, 3, 4, 5, 6, 7, 8),]   
 ```
 
-```{r}
+```{r, echo = FALSE, message=FALSE}
 library(kableExtra)
 library(pander)
 options(knitr.table.format = "html") 
