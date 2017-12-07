@@ -2,18 +2,21 @@
 <br>
   
 ![](http://www.columbia.edu/~sw2206/cu_mailman_logo.png)  
+
   
 # **Medicare Hospital Inspections | DSI | Final Project**
 
+
 ### `Huilan Tang | Candace Haghighi | Nicholas Pantaleo | Carolina Downie`
 
-***
-
-> Introduction...
 
 ***
 
-#### Relevant Links: [Mailman](https://www.mailman.columbia.edu/) | [Huilan's Email](mailto:ht2448@cumc.columbia.edu) | [Candace's Email](mailto:cbh2134@cumc.columbia.edu) | [Nick's Email](mailto:np2582@cumc.columbia.edu) | [Carolina's Email](mailto:cgd2137@cumc.columbia.edu)
+> Introduction
+
+***
+
+#### Relevant Links: [Data Source](https://data.medicare.gov/Hospital-Compare/Hospital-General-Information/xubh-q36u) | [Medicare Data](https://data.medicare.gov) | [Mailman](https://www.mailman.columbia.edu/) | [Huilan's Email](mailto:ht2448@cumc.columbia.edu) | [Candace's Email](mailto:cbh2134@cumc.columbia.edu) | [Nick's Email](mailto:np2582@cumc.columbia.edu) | [Carolina's Email](mailto:cgd2137@cumc.columbia.edu)
 
 ***
 
