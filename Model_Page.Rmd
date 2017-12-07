@@ -11,7 +11,7 @@ output: html_document
 
 The logistic regression model looked at patient experience as the outcome and ownership (categorical), hospital type (binary), and overall rating (continuous) as predictors. We were interested to see how these factors influenced patient experience. Predictors which significantly affected patient experience were overall rating (continuous), hospital type (binary), and Proprietary ownership of the hospital ownership (categorical). We initially used all categories of all variables in our model but with the low overall count of hospitals owned by the government-state, government-local, government-Hospital District or Authority, and government-federal we decided to collapse the dummy variables for government into one governmental categorical variable. The reference variable for the hospital_type variable is acute care hospitals (0). The reference category for the hospital_ownership variable is hospital_ownership_government, and the various dummies include hospital_ownership_Proprietary, hospital_ownership_voluntarynon-profitchurch, hospital_ownership_voluntarynon-profitother, hospital_ownership_voluntarynon-profitprivate. We used the entire dataset to develop this model and also reduced the size of our dataset by creating a binary outcome variable, which may make this model less robust/reproducible.
 
-$logit(patient experience) = -7.40 + -0.96X(hospitalownership-Physician) + -1.38X(hospitalownership-Propietry) + 0.02X(hospitalownership-Voluntary-non-profit-Church) + -0.02X(hospitalownership-Voluntary-non-profit-Other) + -0.16X(hospitalownership-Voluntary-non-profit-Private) + 2.46X(hospital_overall_rating) + 2.13X(hospital_type_CriticalAccessHospitals) $
+$logit(patient experience) = -7.40 + -0.96X(hospitalownership-Physician) + -1.38X(hospitalownership-Propietry) + 0.02X(hospitalownership-Voluntary-non-profit-Church) + -0.02X(hospitalownership-Voluntary-non-profit-Other) + -0.16X(hospitalownership-Voluntary-non-profit-Private) + 2.46X(hospital_overall_rating) + 2.13X(hospital_type_CriticalAccessHospitals)$
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -78,18 +78,18 @@ hospital_data_lr_df <- hospital_data_lr_df[c(1, 2, 3, 4, 5, 6, 7, 8),]
 ```{r}
 library(kableExtra)
 library(pander)
-##options(knitr.table.format = "html") 
+options(knitr.table.format = "html") 
 
 kable(hospital_data_lr_df, caption = "Model Components of our patient experience model") %>%
 kable_styling(bootstrap_options = c("striped", "hover"))
 
 ##May not be able to run with package kableExtra
 
-##kable(hospital_data_lr_df, caption = "Model Components of our patient experience model") %>%
-  ##kable_styling("striped", full_width = F) %>%
-  ##column_spec(5, bold = T) %>%
-  ##row_spec(7:8, bold = T, color = "white", background = "#D7261E") %>%
-  ##row_spec(3, bold = T, color = "white", background = "#D7261E") 
+kable(hospital_data_lr_df, caption = "Model Components of our patient experience model") %>%
+  kable_styling("striped", full_width = F) %>%
+  column_spec(5, bold = T) %>%
+  row_spec(7:8, bold = T, color = "white", background = "#D7261E") %>%
+  row_spec(3, bold = T, color = "white", background = "#D7261E") 
 ```
 
 
