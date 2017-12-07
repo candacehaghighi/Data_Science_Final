@@ -6,7 +6,7 @@ navbar:
     - text: "Shiny Dashboard"
       href: https://carolinadownie.shinyapps.io/p8105_finalproject_shiny/
     - text: "Flex Dashboard"
-      href: https://github.com
+      href: https://github.com/carolinadownie/p8105_finalproject_shiny/blob/master/Hospital_flexdashboard.html
     - text: "Final data repository"
       href: https://github.com/candacehaghighi/Data_Science_Final/
     - text: "Final shiny repository"
