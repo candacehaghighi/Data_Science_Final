@@ -7,15 +7,15 @@ output: html_document
 
 ##Logistic Regression Model with Binary Outcome
 
-The logistic regression model generated below looks at patient experience as an outcome of hospital ownership, hospital type, and overall rating as explained by the [Medicare Hospital General Information dataset](https://data.medicare.gov). Our preliminary model shows hospital overall rating and hospital type as signficant (p<0.05) predictors of patient experience score. 
+The logistic regression model generated below looks at patient experience as an outcome of hospital ownership, hospital type, and overall rating as explained by the [Medicare Hospital General Information dataset](https://data.medicare.gov). Our preliminary model shows hospital overall rating and hospital type as signficant (p<0.05) predictors of the patient experience score. 
 
 * Hopsital ownership was defined by five categores: Proprietary, Physician, Voluntary non-profit Church, Voluntary non-Profit Private, Voluntary non-Profit Other, and Government. The reference variable is Government.
 
-* The government category was originally defined as government-state ownership, government-local ownership, government-Hospital District ownership or Authority, and government-federal. We collapsed the 4 dummy variables for government into one government dummy variable (within hospital ownership). 
+* The government category was originally defined as government-state ownership, government-local ownership, government-Hospital District ownership or Authority ownership, and government-federal ownership. We collapsed the 4 dummy variables for government into one final government dummy variable (within hospital ownership). 
 
 * The reference variable for the hospital type variable is Acute Care Hospitals. 
 
-* The entire dataset (hospital count = 2151) was used develop this model.
+* The entire dataset (hospital count = 2151) was used to develop this model.
 
 ##Final Model
 
@@ -93,7 +93,7 @@ library(kableExtra)
 library(pander)
 options(knitr.table.format = "html") 
 
-kable(hospital_data_lr_df, caption = "Model Components of our patient experience model") %>%
+kable(hospital_data_lr_df, caption = "Model Components of our patient experience model. Significant values highlighted below.") %>%
 
   kable_styling("striped", full_width = F) %>%
   column_spec(5, bold = T) %>%
